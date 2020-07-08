@@ -1,0 +1,385 @@
+::-webkit-scrollbar { /*스크롤바 너비 지정*/
+    width : 15px;
+  }
+  ::-webkit-scrollbar-track {  /*스크롤바가 지나가는 길 색을 하얀색으로 지정*/
+    background-color: white;
+  }
+  ::-webkit-scrollbar-thumb { /*스크롤바 몸통 부분의 색을 검정으로 하고 투명도 0.8로 지정*/
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  ::-webkit-scrollbar-button{ /*스크롤바의 버튼 부분을 하얀색으로 지정*/
+    background-color: white;
+  }
+  ::-webkit-scrollbar-corner { /*스크롤바의 구석을 하얀색으로 지정*/
+    background-color : white;
+  }
+  #Eventinfor /*각 지역 페이지에서의 Eventinfor div에 세로 스크롤 기능을 넣음*/
+  {
+    overflow-y: scroll;
+  }
+  .inner-menu{ /*inner-menu class에 대하여 */
+      display: none; /*display 속성을 none으로 지정*/
+      float:right;  /*오른쪽으로 이어 붙임*/
+      position : absolute; /*위치 속성을 absolute로 지정*/
+      width : 45px; /*너비는 상위 똑같이*/
+      top : 42px; /*위에서부터 42px*/
+      right : 10px; /*오른쪽으로부터 10px*/
+      background : rgb(43,189,210); /*배경색 지정*/
+      box-shadow : 0 2px 6px rgba(5, 5, 5, 0.9); /*box 그림자 속성 아래쪽만 2px 흐림도 6px 살짝 투명하게 그림자 설정*/
+      z-index: 1000; /*태그 스텍 순서 1000으로 지정*/
+      font-size: 15px; /*글자 사이즈 15px*/
+      font-weight: bold; /*글씨 굵게*/
+      line-height:21px; /*글씨 높이 21px*/
+      text-align: center; /*중앙 정렬*/
+      list-style: none; /*불릿 기호 없앰*/
+      padding-left : 20px; /*왼쪽 패딩 20px*/
+      padding-right : 20px; /*오른쪽 패딩 20px*/
+    }
+    .inner-menu a{ /*지역별 페이지에서 다른 지역 페이지로 넘어갈 수 있게 해주는 div*/
+      text-decoration: none;  /*a 태그 속성 없앰*/
+      color : black; /*글자색 검정*/
+    }
+.inner-menu-item{ /*다른 지역 페이지 목록*/
+  padding: 5px 0; /*패딩 상하 5px 좌우 0*/
+}
+.inner-menu-item a:hover{ /*hover 시에*/
+  background : black; /*배경색 검정*/
+  color : white; /*글자색 흰색*/
+}
+.nav_menu_li{
+  display: inline; /*인라인 속성 부여*/
+  position : relative; /*relative로 포지션 속성 지정*/
+  height: 21px; /*높이 21px*/
+  width: 75px; /*너비 75px*/
+  list-style: none; /*불릿 기호 없앰*/
+  float: right; /*오른쪽으로 이어 붙이기*/
+  padding: 10px; /*상하좌우 패딩 10px*/
+  background-color: rgb(43,189,210);/*rgb(46,209,169);*/
+  border-style: none; /*윤곽 없음*/
+  font-size: 17px; /*글자 크기 17px*/
+  font-weight: bold; /*글자 두껍게*/
+  text-align: center; /*가운데 정렬*/
+  line-height:21px; /*글자 높이 21px*/
+  margin: 1px; /*상하 좌우 마진 1px*/
+}
+#Event_Spring
+{
+  display:none; /*보이지 않게 하기*/
+  width: 1200px; /*너비 1200px*/
+  height: 350px; /*높이 350px*/
+  left: 30%;
+  position: relative; /*포지션 속성 relative*/
+  z-index: 0;
+}
+#Event_Summer
+{
+  display:none; /*보이지 않게 하기*/
+  width: 1200px; /*너비 1200px*/
+  height: 350px; /*높이 350px*/
+  left: 50%; /*왼쪽 50%*/
+  margin-left: -300px; /*왼쪽 마진 -300px*/
+  position: relative; /*포지션 속성 relative*/
+}
+#Event_Fall
+{
+  display:none; /*보이지 않게 하기*/
+  width: 1200px; /*너비 1200px*/
+  height: 350px; /*높이 350px*/
+  left: 50%; /*왼쪽 50%*/
+  margin-left: -300px; /*왼쪽 마진 -300px*/
+  position: relative; /*포지션 속성 relative*/
+}
+#Event_Winter /**/
+{
+  display:none; /*보이지 않게 하기*/
+  width: 1200px; /*너비 1200px*/
+  height: 350px; /*높이 350px*/
+  left: 50%; /*왼쪽 50%*/
+  margin-left: -300px; /*왼쪽 마진 -300px*/
+  position: relative; /*포지션 속성 relative*/
+}
+.Each_Event /*각각의 축제*/
+{
+  overflow: hidden; /*overflow속성 없앰*/
+  display:inline-block; /*display속성 인라인블락으로 지정*/
+  width: 50%; /*너비 50%*/
+  height: 100%; /*높이 100%*/
+  position:relative; /*포지션 속성 relative*/
+  transition: .4s; /*transition속성 부여*/
+}
+.Each_Event img /*각각의 축제의 이미지*/
+{
+  width: 100%; /*너비 100%*/
+  transition: .4s; /*transition 속성 부여*/
+}
+.Event_Information /*구체적인 축제정보를 볼 때 누르는 div*/
+{
+  padding: 8px; /*패딩 상하좌우 8px*/
+  opacity: 0; /*투명도 0*/
+  transition: .4s; /*트랜지션 속성 부여*/
+  position: absolute; /*포지션 속성 absolute*/
+  left: 50%; /*왼쪽에서부터 50%*/
+  transform: translateX(-50%) translateY(-50%); /*트랜스폼 속성 부여*/
+  border: 2px solid white; /*상자 테두리 흰색 2px 실선*/
+  top : 50%; /*위쪽에서부터 50%*/
+}
+#Eventinfor /*구체적인 축제 정보를 알려주는 div*/
+{
+  width: 820px; height: 600px; /*너비 820px 높이 600px*/
+    background-color: rgba(0,0,0,0.7); /*배경색을 검정색으로 설정하고 투명도 0.7지정*/
+    color: white; /*글자색 흰색*/
+    position: fixed; /*스크롤해도 고정*/
+    top: 10%; /*위에서 10%*/
+    left: 50%; /*왼쪽에서 50%*/
+    z-index: 100; /*z-index 100지정 화면 우선 출력순위??*/
+    margin-left: -400px; /*왼쪽 마진 -400px*/
+    display:none; /*보이지 않게*/
+}
+#Infor /*축제 이미지, 이름, 기간, 주소, 장소, 전화번호, 홈페이지를 포함하는 div*/
+{
+  width: 800px; /*너비 800px 높이 340px*/
+  height: 340px;
+}
+#Ipicture /*축제 이미지를 포함하는 div*/
+{
+  float : left; /*왼쪽으로 이어붙이기*/
+  margin : 30px; /*상하좌우 마진 30px*/
+  margin-top : 10px; /*위 마진만 10px*/
+}
+#Exitinfor a img /*축제 정보 창을 끄는 X버튼*/
+{
+  float : right;  /*후손 img를 오른쪽으로 이어 붙임*/
+}
+#Image /*축제 이미지를 보여주는 부분*/
+{
+  width:250px; /*너비 250px 높이 300px*/
+  height:300px;
+}
+#Eventintro /*축제 소개 부분 div*/
+{
+  width : 740px; /*너비 740px 높이 200px*/
+  height: 200px;
+}
+.Ititle /*축제 이름을 보여주는 부분*/
+{
+  margin-top : 20px; /*위 마진 20px*/
+  font-size : 27px; /*글씨 크기 27px*/
+  height: 40px; /*높이 40px*/
+  margin-bottom: -10px; /*아래 마진 -10px*/
+}
+.Icontent /*축제 기간, 주소, 장소, 주소, 홈페이지를 포함한 class*/
+{
+  margin-top : 30px; /*위 마진 30px*/
+  height: 30px; /*높이 30px*/
+  font-size: 20px; /*글자 크기 20px*/
+}
+.Introduce /*축제소개가 포함된 div*/
+{
+  margin-top : 30px; /*위 마진 30px*/
+  height: 30px; /*높이 30px*/
+  font-size: 20px; /*글자 크기 20px*/
+  margin-left : 15px; /*마진 왼쪽 15px*/
+}
+
+#Term /*축제 기간을 보여주는 부분*/
+{
+  margin-top: 2px; /*위 마진 2px*/
+  color: white; /*글자색 흰색*/
+  font-size: 13px; /*글자 크기 13px*/
+}
+#Address /*축제 주소를 보여주는 부분*/
+{
+  margin-top: 2px; /*위 마진 2px*/
+  color: white; /*글자색 흰색*/
+  font-size: 13px; /*글자 크기 13px*/
+}
+#Place /*축제 장소를 보여주는 부분*/
+{
+  margin-top: 2px; /*위 마진 2px*/
+  color: white; /*글자색 흰색*/
+  font-size: 13px; /*글자 크기 13px*/
+}
+#Phonenumber /*축제 주최기관 번호 보여주는 부분*/
+{
+  margin-top: 2px; /*위 마진 2px*/
+  color: white; /*글자색 흰색*/
+  font-size: 13px; /*글자 크기 13px*/
+}
+#Homepage /*축제 홈페이지 주소 보여주는 부분*/
+{
+  margin-top: 2px; /*위 마진 2px*/
+  color: white; /*글자색 흰색*/
+  font-size: 13px; /*글자 크기 13px*/
+}
+#Intro /*행사 소개 부분*/
+{
+  display : block; /*display속성을  block으로*/
+  margin-top: 3px; /*위 마진 3px*/
+  color: white; /*글자색 흰색*/
+  font-size: 13px; /*글자 크기 13px*/
+  margin-left : 15px; /*왼쪽 마진 15px*/
+}
+.Eventinfor:hover /*행사정보를 출력하는 div 호버시*/
+{
+  cursor: pointer; /*호버시 마우스 모양을 포인터로*/
+}
+.Event_Information:hover /*클릭시 행사정보를 보여주는 div*/
+{
+  color:white; /*글자색 흰색*/
+  background-color: black; /*배경색을 검정색*/
+}
+.Each_Event:hover /*지역페이지에서 각각의 행사 호버시*/
+{
+  background-color:rgba(255,255,255,0.3); /*배경이미지 흰색 투명도 0.3*/
+}
+.Each_Event:hover div /*지역페이지에서 각각의 행사 호버시 div*/
+{
+  opacity:1; /*투명도 1*/
+  z-index:1; /*화면출력 순서 조절*/
+}
+.Each_Event:hover img /*지역페이지에서 각각의 행사 호버시 img*/
+{
+  opacity:0.1; /*투명도 0.1*/
+  z-index:10; /*화면출력 순서 조절*/
+}
+#Sel{ /*지역페이지에서 다른 지역페이지로 바로 이동 가능하게 하는 고정바*/
+  border-radius: 0 10px 10px 0; /*우측 상단 하단 10px씩 둥글게*/
+}
+#English:hover{ /*English 호버시 영어 페이지로 이동시키는 고정바*/
+  background: url(images/United_States.jpg); /*배경이미지*/
+  background-size: cover; /*크기 자동설정*/
+}
+#English:hover a { /*English 호버시*/
+  color: rgba(0,0,0,0); /*글자 안보이게*/
+}
+#Korea:hover { /*Korea 호버시 한국어 페이지로 이동시키는 고정바*/
+  background:  url(images/Korea.jpg); /*배경이미지*/
+  background-size: cover; /*크기 자동설정*/
+}
+#Korea:hover a { /*Korea 호버시*/
+  color: rgba(0,0,0,0); /*글자 안 보이게*/
+}
+#Home{ /*HOME 고정메뉴*/
+
+  border-radius: 10px 0 0 10px; /*왼쪽상단 왼쪽 하단 10px만큼 둥글게*/
+}
+#Home:hover{ /*HOME 호버시*/
+  background: url(images/Home.jpg); /*배경이미지*/
+  background-size: cover; /*크기 자동설정*/
+}
+#Home:hover a { /*HOME 호버시*/
+  color: rgba(0,0,0,0); /*글자 안보이게*/
+}
+
+.nav_menu_a{ /*우측 상단 고정바 목록들*/
+  text-decoration: none; /*하이퍼링크 속성 없앰*/
+  color: black; /*글자색 검정색*/
+}
+#header_menu_nav { /*우측 상단 고정바*/
+  position: fixed; /*스크롤 해도 고정*/
+  right: 10px; /*오른쪽으로부터 10px*/
+}
+.nav_season_li{ /*시즌 고정바 목록들*/
+  background-color: rgb(28,225,126); /*배경색지정*/
+  width: 110px; /*너비 110px 높이 70px*/
+  height: 70px;
+  margin: 5px; /*상하좌우 마진 5px*/
+  list-style: none; /*불릿 기호 제거*/
+  text-align: center; /*글자 중앙정렬*/
+  line-height: 70px; /*글자 높이 70px*/
+  border-radius: 50px; /*꼭짓점 50px만큼 둥글게*/
+}
+.nav_season_li a{ /*시즌 메뉴바 후손 a태그들*/
+  color: rgb(196,57,82); /*글자색 지정*/
+  text-decoration: none; /*하이퍼링크 속성 제거*/
+  font-size: 19px; /*글자 크기 19px*/
+  font-weight: bold; /*글자 두껍게*/
+}
+#Season_bar { /*오른쪽 계절 선택바*/
+  position: fixed; /*스크롤해도 고정*/
+  right : 30px; /*오른쪽에서부터 30px*/
+  margin-top : 150px; /*위쪽 마진 150px*/
+  z-index : 100; /*화면 우선 출력*/
+}
+#Spring:hover{ /*봄 hover시*/
+  background: url(images/봄_1.jpg); /*배경이미지*/
+  background-size: cover; /*크기 자동설정*/
+}
+#Spring:hover a{ /*봄 hover시*/
+  color: rgba(0,0,0,0); /*글자색 투명*/
+}
+#Summer:hover{ /*여름 hover시*/
+  background: url(images/여름_1.jpg); /*배경이미지*/
+  background-size: cover; /*크기 자동설정*/
+}
+#Summer:hover a{ /*여름 hover시*/
+  color: rgba(0,0,0,0); /*글자색 투명*/
+}
+#Fall:hover{ /*가을 hover시*/
+  background: url(images/가을_1.jpg); /*배경이미지*/
+  background-size: cover; /*크기 자동설정*/
+}
+#Fall:hover a{ /*가을 hover시*/
+  color: rgba(0,0,0,0); /*글자색 투명*/
+}
+#Winter:hover{ /*겨울 hover시*/
+  background: url(images/겨울_1.jpg); /*배경이미지*/
+  background-size: cover; /*크기 자동설정*/
+}
+#Winter:hover a{ /*겨울  hover시*/
+  color: rgba(0,0,0,0); /*글자색 투명*/
+}
+#Logo{ /*상단 홈페이지 로고*/
+  margin-left : auto; /*왼쪽 오른쪽 가운데 정렬*/
+  margin-right: auto;
+  display : block; /*display속성 block*/
+  margin-bottom: 10px; /*아래 마진 10px*/
+  width: 400px; /*너비 400px 높이 100px*/
+  height : 100px;
+}
+#Exitinfor /*행사정보 창을 끄는 X박스*/
+{
+  cursor : pointer; /*hover시 마우스 포인터*/
+  width: 30px; height: 30px; /*너비 높이 30px*/
+  float:right; /*오른쪽으로 이어붙이기*/
+}
+#Right /*오른쪽 화살표*/
+{
+  cursor:pointer; /*hover시 마우스 포인터*/
+  position : relative; /*포지션 속성 relative*/
+  float : right; /*오른쪽으로 이어붙이기*/
+  top : 280px; /*위에서부터 280px*/
+}
+#Intro{ /*행사소개*/
+  margin-bottom: 15px; /*아래 마진 15px*/
+}
+#Left /*왼쪽 화살표*/
+{
+  cursor:pointer; /*hover시 마우스 포인터*/
+  position : relative; /*포지션 속성 relative*/
+  float : left; /*왼쪽으로 이어붙이기*/
+  left : 20px; /*왼쪽으로부터 20px*/
+  top : 280px; /*위로부터 280px*/
+}
+#Map /*구글 API*/
+{
+  width : 600px; /*너비 600px 높이 500px*/
+  height : 500px;
+  margin : 50px auto; /*상하 마진 50px 좌우 중앙정렬*/
+}
+#Month_nav{/*계절바에 hover시 해당 달을 보여줌*/
+  display:none; /*안보이게 설정*/
+}
+#API /*구글 API가 있는 div*/
+{
+  width: 805px; height: 600px; /*너비 805px 높이 600px*/
+    background-color: rgba(0,0,0,0.7); /*배경색 검정색 투명도 0.7*/
+    color: white; /*글자색 흰색*/
+    position: fixed; /*스크롤해도 고정*/
+    top: 10%; /*위로부터 10px*/
+    left: 50%; /*왼쪽으로 부터 50%*/
+    z-index: 100; /*화면 우선 출력 */
+    margin-left: -400px; /*왼쪽 마진 -400px*/
+    display:none; /*안보이게 설정*/
+}

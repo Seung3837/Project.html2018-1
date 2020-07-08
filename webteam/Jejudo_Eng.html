@@ -1,0 +1,622 @@
+<!doctype html>
+<html>
+<head>
+  <title>Jejudo Festival</title>
+  <link href="style.css" rel="stylesheet"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+  $(document).ready(function () {
+  $('.nav_menu_li').hover(function () {
+  $(this).find('.inner-menu').show();
+  }, function () {
+  $(this).find('.inner-menu').hide();
+  });
+  });
+  </script>
+  <style>
+
+  content
+  {
+    width : 1200px;
+  }
+  </style>
+  <script>
+  var Spring_arr=["images/Jejudo images/설문대/설문대 (1).jpg", "images/Jejudo images/설문대/설문대 (2).jpg", "images/Jejudo images/설문대/설문대 (3).jpg",
+"images/Jejudo images/설문대/설문대 (4).jpg", "images/Jejudo images/설문대/설문대 (5).jpg",
+"images/Jejudo images/설문대/설문대 (6).jpg", "images/Jejudo images/설문대/설문대 (7).jpg"];
+var Spring_arr2=["images/Jejudo images/방선문/방선문 (1).jpg", "images/Jejudo images/방선문/방선문 (2).jpg", "images/Jejudo images/방선문/방선문 (3).jpg",
+"images/Jejudo images/방선문/방선문 (4).jpg", "images/Jejudo images/방선문/방선문 (5).jpg", "images/Jejudo images/방선문/방선문 (6).jpg",
+"images/Jejudo images/방선문/방선문 (7).jpg", "images/Jejudo images/방선문/방선문 (8).jpg", "images/Jejudo images/방선문/방선문 (9).jpg",
+"images/Jejudo images/방선문/방선문 (10).jpg", "images/Jejudo images/방선문/방선문 (11).png", "images/Jejudo images/방선문/방선문 (12).png"
+, "images/Jejudo images/방선문/방선문 (13).png"];
+  var Spring_i = 0;
+  var Spring_j = 0;
+
+  var Summer_arr=["images/Jejudo images/짠/짠 (1).jpg", "images/Jejudo images/짠/짠 (2).jpg", "images/Jejudo images/짠/짠 (3).jpg",
+"images/Jejudo images/짠/짠 (4).jpg", "images/Jejudo images/짠/짠 (5).jpg", "images/Jejudo images/짠/짠 (6).jpg",
+"images/Jejudo images/짠/짠 (7).jpg", "images/Jejudo images/짠/짠 (8).jpg", "images/Jejudo images/짠/짠 (9).jpg",
+"images/Jejudo images/짠/짠 (10).jpg"];
+var Summer_arr2=["images/Jejudo images/태권/태권 (1).jpg", "images/Jejudo images/태권/태권 (2).jpg", "images/Jejudo images/태권/태권 (3).jpg",
+"images/Jejudo images/태권/태권 (4).jpg", "images/Jejudo images/태권/태권 (5).jpg"];
+  var Summer_i = 0;
+  var Summer_j = 0;
+
+  var Fall_arr=["images/Jejudo images/서귀포/서귀포 (1).jpg", "images/Jejudo images/서귀포/서귀포 (2).jpg", "images/Jejudo images/서귀포/서귀포 (3).jpg",
+  "images/Jejudo images/서귀포/서귀포 (4).jpg", "images/Jejudo images/서귀포/서귀포 (5).jpg",
+"images/Jejudo images/서귀포/서귀포 (6).jpg", "images/Jejudo images/서귀포/서귀포 (7).jpg"];
+  var Fall_arr2=["images/Jejudo images/허브/허브 (1).jpg", "images/Jejudo images/허브/허브 (2).jpg", "images/Jejudo images/허브/허브 (3).jpg",
+"images/Jejudo images/허브/허브 (4).jpg", "images/Jejudo images/허브/허브 (5).jpg", "images/Jejudo images/허브/허브 (6).jpg",
+"images/Jejudo images/허브/허브 (7).jpg"];
+  var Fall_i = 0;
+  var Fall_j = 0;
+
+  var Winter_arr=["images/Jejudo images/한림/한림 (1).jpg", "images/Jejudo images/한림/한림 (2).jpg", "images/Jejudo images/한림/한림 (3).jpg",
+  "images/Jejudo images/한림/한림 (4).jpg", "images/Jejudo images/한림/한림 (5).jpg"];
+  var Winter_arr2=["images/Jejudo images/겨울바다/겨울바다 (1).jpg", "images/Jejudo images/겨울바다/겨울바다 (2).jpg", "images/Jejudo images/겨울바다/겨울바다 (3).jpg",
+"images/Jejudo images/겨울바다/겨울바다 (4).jpg", "images/Jejudo images/겨울바다/겨울바다 (5).jpg", "images/Jejudo images/겨울바다/겨울바다 (6).png"];
+  var Winter_i = 0;
+  var Winter_j = 0;
+
+  var Spring_interval, Spring_interval2;
+  var Summer_interval, Summer_interval2;
+  var Fall_interval, Fall_interval2;
+  var Winter_interval, Winter_interval2;
+
+  function start_Spring_interval(){
+    var Spring_image = document.getElementById('Event_Spring_image_1');
+    var Spring_image2 = document.getElementById('Event_Spring_image_2');
+    Spring_interval = setInterval(function(){
+      Spring_image.src = Spring_arr[Spring_i%7];
+      Spring_i = Spring_i + 1;
+    }, 1000);//1000= 1sec
+    Spring_interval2 = setInterval(function(){
+      Spring_image2.src = Spring_arr2[Spring_j%13];
+      Spring_j = Spring_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Spring_interval(){
+    clearInterval(Spring_interval);
+    clearInterval(Spring_interval2);
+  }
+  function start_Summer_interval(){
+    var Summer_image = document.getElementById('Event_Summer_image_1');
+    var Summer_image2 = document.getElementById('Event_Summer_image_2');
+    Summer_interval = setInterval(function(){
+      Summer_image.src = Summer_arr[Summer_i%10];
+      Summer_i = Summer_i + 1;
+    }, 1000);//1000= 1sec
+    Summer_interval2 = setInterval(function(){
+      Summer_image2.src = Summer_arr2[Summer_j%5];
+      Summer_j = Summer_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Summer_interval(){
+    clearInterval(Summer_interval);
+    clearInterval(Summer_interval2);
+  }
+  function start_Fall_interval(){
+    var Fall_image = document.getElementById('Event_Fall_image_1');
+    var Fall_image2 = document.getElementById('Event_Fall_image_2');
+    Fall_interval = setInterval(function(){
+      Fall_image.src = Fall_arr[Fall_i%7];
+      Fall_i = Fall_i + 1;
+    }, 1000);//1000= 1sec
+    Fall_interval2 = setInterval(function(){
+      Fall_image2.src = Fall_arr2[Fall_j%7];
+      Fall_j = Fall_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Fall_interval(){
+    clearInterval(Fall_interval);
+    clearInterval(Fall_interval2);
+  }
+  function start_Winter_interval(){
+    var Winter_image = document.getElementById('Event_Winter_image_1');
+    var Winter_image2 = document.getElementById('Event_Winter_image_2');
+    Winter_interval = setInterval(function(){
+      Winter_image.src = Winter_arr[Winter_i%5];
+      Winter_i = Winter_i + 1;
+    }, 1000);//1000= 1sec
+    Winter_interval2 = setInterval(function(){
+      Winter_image2.src = Winter_arr2[Winter_j%6];
+      Winter_j = Winter_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Winter_interval(){
+    clearInterval(Winter_interval);
+    clearInterval(Winter_interval2);
+  }
+  </script>
+</head>
+<body>
+  <div>
+    <header>
+      <nav id="header_menu_nav">
+            <ul>
+              <li id="Sel" class="nav_menu_li">
+                <span>Jeju</span>
+                <ul class="inner-menu">
+                  <li class="inner-menu-item"><a href="Kyungkido_Eng.html">Kyungki</a></li>
+                  <li class="inner-menu-item"><a href="Choongchungdo_Eng.html">Choongchung</a></li>
+                  <li class="inner-menu-item"><a href="Kyungsangdo_Eng.html">Kyungsang</a></li>
+                  <li class="inner-menu-item"><a href="Jullado_Eng.html">Jeolla</a></li>
+                  <li class="inner-menu-item"><a href="Kangwondo_Eng.html">Kangwon</a></li>
+                </ul>
+              </li>
+              <li id="English" class="nav_menu_li"><a href="Jejudo_Eng.html" class="nav_menu_a">English</a></li>
+              <li id="Korea" class="nav_menu_li"><a href="Jejudo.html".html class="nav_menu_a">한국_ㄸ</a></li>
+              <li id="Home" class="nav_menu_li"><a href="HOME_Eng.html" class="nav_menu_a">HOME</a></li>
+            </ul>
+      </nav>
+      <a href="HOME_Eng.html"><img id="Logo" src="./images/LOGO.png" width="400px" height="100px"/></a>
+    </header>
+    <aside>
+      <div>
+        <nav id="Season_bar">
+          <ul>
+            <li id="Spring" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Spring_Month_div(this)"><a href="#" id="Spring_nav_a" class="nav_season_a" onclick="Season_Selector(1)">Spring</a></li>
+            <li id="Summer" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Summer_Month_div(this)"><a href="#" id="Summer_nav_a" class="nav_season_a" onclick="Season_Selector(2)">Summer</a></li>
+            <li id="Fall" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Fall_Month_div(this)"><a href="#" id="Fall_nav_a" class="nav_season_a" onclick="Season_Selector(3)">Autumn</a></li>
+            <li id="Winter" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Winter_Month_div(this)"><a href="#" id="Winter_nav_a" class="nav_season_a" onclick="Season_Selector(4)">Winter</a></li>
+            <li id="Month_nav" class="nav_season_li"><span id="Month_nav_a" class="nav_season_a"></span></li>
+          </ul>
+          </nav>
+        </div>
+      </aside>
+      <article>
+        <section>
+          <div id="Eventinfor">
+            <div id="Exitinfor">
+              <a><img src="./images/X.png" width=30 height=30 onClick="Inforhide()"/></a>
+            </div>
+
+            <div id="Right">
+              <img src="./images/right.png" width=30 height=30 onClick="Next(1)"/>
+            </div>
+
+            <div id="Infor">
+              <div id="Ipicture"><img id="Image"></div>
+              <div class="Ititle"><p id="Title"></p></div>
+              <div class="Icontent">Festival term<p id="Term"></p></div>
+              <div class="Icontent">Address<p id="Address"></p></div>
+              <div class="Icontent">Festival place<p id="Place"></p></div>
+              <div class="Icontent">Phone number<p id="Phonenumber"></p></div>
+              <div class="Icontent">Homepage<p id="Homepage"></p></div>
+            </div>
+            <div id="Eventintro">
+              <div class="Introduce">Introduction<p id="Intro"></p></div>
+            </div>
+          </div>
+
+          <div id="API">
+            <div id="Exitinfor">
+              <a><img src="./images/X.png" width=30 height=30 onClick="Inforhide()"/></a>
+            </div>
+            <div id="Left">
+              <img src="./images/left.png" width=30 height=30 onClick="Next(2)"/>
+            </div>
+            <div id="Map"></div>
+          </div>
+
+        </section>
+        <content>
+          <div id="Event_Spring">
+            <div class="Each_Event">
+              <div class="Event_Information" onclick="Infornum(1)"><a>Introduction</a></div>
+              <img src="./images/Jejudo images/설문대/설문대 (7).jpg" id="Event_Spring_image_1" width=300 height=400/>
+              </div>
+              <div class="Each_Event">
+                <div class="Event_Information" onclick="Infornum(2)"><a>Introduction</a></div>
+                <img src="./images/Jejudo images/방선문/방선문 (13).png" id="Event_Spring_image_2" width=300 height=400/>
+                </div>
+            </div>
+            <div id="Event_Summer">
+              <div class="Each_Event">
+                <div class="Event_Information" onclick="Infornum(3)"><a>Introduction</a></div>
+                <img src="./images/Jejudo images/짠/짠 (10).jpg" id="Event_Summer_image_1" width=300 height=400/>
+                </div>
+                <div class="Each_Event">
+                  <div class="Event_Information" onclick="Infornum(4)"><a>Introduction</a></div>
+                  <img src="./images/Jejudo images/태권/태권 (5).jpg" id="Event_Summer_image_2" width=300 height=400/>
+                  </div>
+              </div>
+              <div id="Event_Fall">
+                <div class="Each_Event">
+                  <div class="Event_Information" onclick="Infornum(5)"><a>Introduction</a></div>
+                  <img src="./images/Jejudo images/서귀포/서귀포 (7).jpg" id="Event_Fall_image_1" width=300 height=400/>
+                  </div>
+                  <div class="Each_Event">
+                    <div class="Event_Information" onclick="Infornum(6)"><a>Introduction</a></div>
+                    <img src="./images/Jejudo images/허브/허브 (7).jpg" id="Event_Fall_image_2" width=300 height=400/>
+                    </div>
+                </div>
+                <div id="Event_Winter" >
+                  <div class="Each_Event">
+                    <div class="Event_Information" onclick="Infornum(7)"><a>Introduction</a></div>
+                    <img src="./images/Jejudo images/한림/한림 (5).jpg" id="Event_Winter_image_1" width=300 height=400/>
+                    </div>
+                    <div class="Each_Event">
+                      <div class="Event_Information" onclick="Infornum(8)"><a>Introduction</a></div>
+                      <img src="./images/Jejudo images/겨울바다/겨울바다 (6).png" id="Event_Winter_image_2" width=300 height=400/>
+                      </div>
+                  </div>
+        </content>
+      </article>
+  </div>
+  <script>
+  if (typeof(Storage) !== "undefined") {
+      // Retrieve
+      var a;
+      var Season_bar_num;
+      a = sessionStorage.getItem("season_num");
+      Season_bar_num = a;
+      Season_Selector(a);
+      Season_bar_fix(Season_bar_num);
+  }
+
+  function Season_bar_fix(Season_bar_num){
+    if(Season_bar_num==1){//
+      document.getElementById("Summer_nav_a").innerHTML = "Summer";
+      document.getElementById("Fall_nav_a").innerHTML = "Autumn";
+      document.getElementById("Winter_nav_a").innerHTML = "Winter";
+      document.getElementById("Summer").style.background = "rgb(28,225,126)";
+      document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = "rgb(28,225,126)";
+      document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = "rgb(28,225,126)";
+      document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Spring").style.background = 'url(images/봄_2.jpg)';
+      document.getElementById("Spring_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Spring_nav_a").innerHTML = "";
+    }
+    else if(Season_bar_num==2){
+      document.getElementById("Spring_nav_a").innerHTML = "Spring";
+      document.getElementById("Fall_nav_a").innerHTML = "Autumn";
+      document.getElementById("Winter_nav_a").innerHTML = "Winter";
+      document.getElementById("Spring").style.background = "rgb(28,225,126)";
+      document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = "rgb(28,225,126)";
+      document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = "rgb(28,225,126)";
+      document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Summer").style.background = 'url(images/여름_2.jpg)';
+      document.getElementById("Summer_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Summer_nav_a").innerHTML = "";
+    }
+    else if(Season_bar_num==3){
+      document.getElementById("Spring_nav_a").innerHTML = "Spring";
+      document.getElementById("Summer_nav_a").innerHTML = "Summer";
+      document.getElementById("Winter_nav_a").innerHTML = "Winter";
+      document.getElementById("Spring").style.background = "rgb(28,225,126)";
+      document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Summer").style.background = "rgb(28,225,126)";
+      document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = "rgb(28,225,126)";
+      document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = 'url(images/가을_2.jpg)';
+      document.getElementById("Fall_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Fall_nav_a").innerHTML = "";
+    }
+    else if(Season_bar_num==4){
+      document.getElementById("Spring_nav_a").innerHTML = "Spring";
+      document.getElementById("Summer_nav_a").innerHTML = "Summer";
+      document.getElementById("Fall_nav_a").innerHTML = "Autumn";
+      document.getElementById("Spring").style.background = "rgb(28,225,126)";
+      document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Summer").style.background = "rgb(28,225,126)";
+      document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Fall").style.background = "rgb(28,225,126)";
+      document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+      document.getElementById("Winter").style.background = 'url(images/겨울_2.jpg)';
+      document.getElementById("Winter_nav_a").style.color = "rgba(0,0,0,0)";
+      document.getElementById("Winter_nav_a").innerHTML = "";
+    }
+  }
+
+  function Spring_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "Mar~May";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Summer_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "Jun~Aug";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Fall_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "Sep~Nov";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Winter_Month_div(obj){
+    document.getElementById("Month_nav_a").innerHTML = "Dec~Feb";
+    document.getElementById("Month_nav_a").style.color = "white";
+    document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+    document.getElementById("Month_nav").style.display = "block";
+  }
+  function Month_hide(obj){
+    document.getElementById("Month_nav").style.display = "none";
+  }
+
+  function Inforhide()
+  {
+    document.getElementById('Eventinfor').style.display = "none";
+    document.getElementById('API').style.display = "none";
+  }
+  function Next(num)
+{
+  if(num == 1)
+  {
+    document.getElementById('API').style.display = "block";
+    document.getElementById('Eventinfor').style.display = "none";
+  }
+  if(num == 2)
+  {
+    document.getElementById('Eventinfor').style.display = "block";
+    document.getElementById('API').style.display = "none";
+  }
+}
+
+  function Infornum(num)
+  {
+    if(num == 1)
+    {
+      document.getElementById('Image').src = "./images/Jejudo images/설문대/설문대 (7).jpg";
+      document.getElementById('Title').textContent = "Seolmundae Halmangje";
+      document.getElementById('Term').textContent = "2018.05.15 ~ 2018.05.30";
+      document.getElementById('Address').textContent = "Jeju Special Self-Governing Province, Jeollanam-do 2023 (Jocheon-eup)";
+      document.getElementById('Place').textContent = "Jeju Stone Culture Park";
+      document.getElementById('Phonenumber').textContent = "064-710-7731";
+      document.getElementById('Homepage').textContent = "http://www.jejustonepark.com";
+      document.getElementById('Intro').innerHTML = "In Jeju Stone Culture Park, which is a core theme of Jeju's representative 'Memorial Questionnaire and Five hundred General Myths,'' I would like to promote understanding of the true meaning and value of the questionnaire deity myth and to promote the identity of Jeju, We will hold ceremonies, seminars, and other related events to honor the questionnaires.";
+
+      var halmang = {lat: 33.448913, lng: 126.659003};
+      var map = new google.maps.Map(document.getElementById('Map'), {
+        zoom: 12,
+        center: halmang
+      });
+      var marker = new google.maps.Marker({
+        position: halmang,
+        map: map
+      });
+    }
+    else if(num == 2)
+    {
+      document.getElementById('Image').src = "./images/Jejudo images/방선문/방선문 (13).png";
+      document.getElementById('Title').textContent = "Dream Gate Festival";
+      document.getElementById('Term').textContent = "2018.05.12 ~ 2018.05.13";
+      document.getElementById('Address').textContent = "Jeju Special Self-Governing Province";
+      document.getElementById('Place').textContent = "Bangseonmun, Bangseonmunganeun Supgil";
+      document.getElementById('Phonenumber').textContent = "064-728-4802";
+      document.getElementById('Homepage').textContent = "#";
+      document.getElementById('Intro').innerHTML = "The festival of the Hallasan gods and the people begins with the sound of opening the festival and calling it fresh. Pastor Jeju who came to Korea for the 15th time will go out with spring flowers as a wisdom gate, and will enjoy harmony and communication and Jeju development. He creates a healing field for treasure in wish of the freshman in a flower field of a brilliant bloom.";
+
+      var bang = {lat: 33.454496, lng: 126.516929};
+      var map = new google.maps.Map(document.getElementById('Map'), {
+        zoom: 12,
+        center: bang
+      });
+      var marker = new google.maps.Marker({
+        position: bang,
+        map: map
+      });
+
+    }
+    else if(num == 3)
+    {
+      document.getElementById('Image').src = "./images/Jejudo images/짠/짠 (10).jpg";
+      document.getElementById('Title').textContent = "Jjan Festival";
+      document.getElementById('Term').textContent = "2018.07.20 ~ 2018.07.22";
+      document.getElementById('Address').textContent = "Jeju Special Self-Governing Province, Seogwipo City";
+      document.getElementById('Place').textContent = "Place Camp Jeju";
+      document.getElementById('Phonenumber').textContent = "064-766-3000";
+      document.getElementById('Homepage').textContent = "https://bit.ly/2k8vnJr";
+      document.getElementById('Intro').innerHTML = "In 2017, the first beer festival in Jeju, which is loved by 5,000 people, is an Irish festival! This year we have returned to the 'All Beers of the World'! Let's spend the coolest night with a salty festival that will chill the summer night in Jeju.";
+
+      var jjan = {lat: 33.449024, lng: 126.917559};
+      var map = new google.maps.Map(document.getElementById('Map'), {
+        zoom: 12,
+        center: jjan
+      });
+      var marker = new google.maps.Marker({
+        position: jjan,
+        map: map
+      });
+    }
+    else if(num == 4)
+    {
+      document.getElementById('Image').src = "./images/Jejudo images/태권/태권 (5).jpg";
+      document.getElementById('Title').textContent = "World Taekwondo Hanmadang";
+      document.getElementById('Term').textContent = "2018.07.28 ~ 2018.07.31";
+      document.getElementById('Address').textContent = "Jeju Special Self-Governing Province, Jeju-si, Korea";
+      document.getElementById('Place').textContent = "Halla Gymnasium";
+      document.getElementById('Phonenumber').textContent = "02-3469-0192, 064-702-2081";
+      document.getElementById('Homepage').textContent = "http://hanmadang.kukkiwon.or.kr";
+      document.getElementById('Intro').innerHTML = "World Taekwondo Hanmadang is the world Taekwondo headquarters which shows the essence of Taekwondo including defeat, demonstration and self defense. It is an annual event organized by Kukkiwon which is the base of Taekwondo. After the first event held in 1992 to promote unity, Taekwondo is recognized as a comprehensive contest of Taekwondo technology boasting the world's highest authority and tradition. Through this, 'World Taekwondo Hanmadang' is raising the value of Taekwondo as a mental culture that is shared by the people of the world. In particular, 'World Taekwondo Hanmadang' is a festival of Taekwondo people from all over the world who are trained in Taekwondo as martial arts";
+
+      var taekwon = {lat: 33.495096, lng: 126.518916};
+      var map = new google.maps.Map(document.getElementById('Map'), {
+        zoom: 12,
+        center: taekwon
+      });
+      var marker = new google.maps.Marker({
+        position: taekwon,
+        map: map
+      });
+    }
+    else if(num == 5)
+    {
+      document.getElementById('Image').src = "./images/Jejudo images/서귀포/서귀포 (7).jpg";
+      document.getElementById('Title').textContent = "Seogwipo Chilsipri Festival";
+      document.getElementById('Term').textContent = "2018.09.28 ~ 2018.09.30";
+      document.getElementById('Address').textContent = "70-1 Seogu-dong, Seogwipo-si, Jeju Special Self-Governing Province";
+      document.getElementById('Place').textContent = "Seogwipo Jaguri Park and Chilcheon Food Specialized Street Members";
+      document.getElementById('Phonenumber').textContent = "064-760-3946";
+      document.getElementById('Homepage').textContent = "http://i70ni.com";
+      document.getElementById('Intro').innerHTML = "Seogwipo It is held in various programs such as marine experience and folklore experience so that you can feel Jeju's feeling in the coast of Chilseongri coast. It is the Seogwipo chilsimyi festival that expresses the birth and power of chilsim, the beauty and mystique of the island, the story shared in it, dreams and love that they had, and the birth and power of Seogwipo's life. This festival will be a theme of the festival, with both the citizens and the tourists becoming the theme of the festival, so that the festival participants can have a variety of themes and entertain them with joy.";
+
+      var nifestival = {lat: 33.243488, lng: 126.569149};
+      var map = new google.maps.Map(document.getElementById('Map'), {
+        zoom: 12,
+        center: nifestival
+      });
+      var marker = new google.maps.Marker({
+        position: nifestival,
+        map: map
+      });
+    }
+    else if(num == 6)
+    {
+      document.getElementById('Image').src = "./images/Jejudo images/허브/허브 (7).jpg";
+      document.getElementById('Title').textContent = "Herb garden 'Starlight play'";
+      document.getElementById('Term').textContent = "2018.01.01 ~ 2018.12.31";
+      document.getElementById('Address').textContent = "Jeonju Special Self-Governing Province";
+      document.getElementById('Place').textContent = "In Jeju Hub Dongsan Park";
+      document.getElementById('Phonenumber').textContent = "064-787-7362~3";
+      document.getElementById('Homepage').textContent = "http://www.herbdongsan.com";
+      document.getElementById('Intro').innerHTML = "Experience the experience of making golden footbaths with six herbs, making your own soap made from natural herbs, elevation, walking in a variety of gardens and walkways filled with about 150 kinds of herbs and wildflowers under our day in the 20,000 square meter herb garden. Mushrooms and citrus harvesting experience. At night, it is reborn as a romantic light park with a multimedia show 'Secret Garden', a multimedia show based on 3D mapping of Jeju Island, and 3 million lights. I invite you to the 'Starlight Play' in Jeju Herb Garden, which gives you healing for your family, love for your lover and dreams and hope for your children.";
+
+      var dongsan = {lat: 33.329879, lng: 126.814861};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: dongsan
+        });
+        var marker = new google.maps.Marker({
+          position: dongsan,
+          map: map
+        });
+    }
+    else if(num == 7)
+    {
+      document.getElementById('Image').src = "./images/Jejudo images/한림/한림 (5).jpg";
+      document.getElementById('Title').textContent = "Hanlim Park Daffodil Festival";
+      document.getElementById('Term').textContent = "2018.01.19 ~ 2018.02.18";
+      document.getElementById('Address').textContent = "Jeju Special Self-Governing Province Jeju-si, Hanlim-e 300 (Hanlim-eup)";
+      document.getElementById('Place').textContent = "Jeju City Hanlim Park";
+      document.getElementById('Phonenumber').textContent = "064-796-0001";
+      document.getElementById('Homepage').textContent = "#";
+      document.getElementById('Intro').innerHTML = "Han Lin Park's daffodil garden is filled with about 100,000 golden daffodils and Jeju daffodil flowers, all of which are blooming. I can feel the fragrance of incense with the appearance of the daffodil which is enduring the cold winter and shyly blooming. <Hanlim Park Daffodil Festival> will be held from January 19th to February 18th, celebrating its 8th anniversary this year.";
+
+      var hanrim = {lat: 33.389594, lng: 126.239256};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: hanrim
+        });
+        var marker = new google.maps.Marker({
+          position: hanrim,
+          map: map
+        });
+    }
+    else if(num == 8)
+    {
+      document.getElementById('Image').src = "./images/Jejudo images/겨울바다/겨울바다 (6).png";
+      document.getElementById('Title').textContent = "Seogwipo Winter Sea International Penguin Swimming Competition";
+      document.getElementById('Term').textContent = "2018.01.01";
+      document.getElementById('Address').textContent = "Jeju Special Self-Governing Province Seogwipo-si";
+      document.getElementById('Place').textContent = "Chungmun Saekdal Beach";
+      document.getElementById('Phonenumber').textContent = "064-739-7201";
+      document.getElementById('Homepage').textContent = "http://cafe.daum.net/winter-sea-swim";
+      document.getElementById('Intro').innerHTML = "Penguin Dance Competition, Penguin Dance Competition, Penguin Wrestling King Selection Contest, Congratulatory Performance, Unexpected Fortune, King of the Sea Turtle Find a gift";
+
+      var seaswim = {lat: 33.245908, lng: 126.413083};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: seaswim
+        });
+        var marker = new google.maps.Marker({
+          position: seaswim,
+          map: map
+        });
+    }
+
+    document.getElementById('Eventinfor').style.display = "block";
+  }
+
+  function Season_Selector(num)
+  {
+    if(num == 1)
+    {
+      Season_bar_num = 1;//
+      stop_Summer_interval();
+      stop_Fall_interval();
+      stop_Winter_interval();
+      start_Spring_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 2)
+    {
+      Season_bar_num = 2;//
+      stop_Spring_interval();
+      stop_Fall_interval();
+      stop_Winter_interval();
+      start_Summer_interval();
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Summer").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 3)
+    {
+      Season_bar_num = 3;//
+      stop_Spring_interval();
+      stop_Summer_interval();
+      stop_Winter_interval();
+      start_Fall_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 4)
+    {
+      Season_bar_num = 4;//
+      stop_Spring_interval();
+      stop_Summer_interval();
+      stop_Fall_interval();
+      start_Winter_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+    }
+    Season_bar_fix(Season_bar_num);//
+  }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgxRAiLM6U879XESA7-6C8GvnaouETN3Y&callback=initMap"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+﻿<!doctype html>
+<html>
+<head>
+  <title>전국축제</title>
+  <link href="style.css" rel="stylesheet"/>
+  <style>
+  #season /*계절 선택 하는 div*/
+  {
+    width : 1150px; /*너비 1150px  높이 740px*/
+    height : 740px;
+    margin  : 0 auto ; /*상하 마진 0 좌우 가운데 정렬*/
+    position : relative; /*포지션 속성 relative*/
+    top : 10px; /*위로부터 10px*/
+    border-radius: 15px; /*꼭짓점 15px만큼 둥글게*/
+    box-shadow: 5px 5px 2px pink; /*그림자 오른쪽 아래 5px 흐림도 2px 분홍색*/
+  }
+  #spring /*봄*/
+  {
+    width : 400px; /*너비 400px 높이 740px*/
+    height : 740px;
+    background-size: contain; /*크기 자동조정*/
+    position : absolute; /*absolute 속 */
+  }
+  div#spring img /*스프링 img */
+  {
+    border-radius: 15px 0 0 15px; /*좌측 상하단 15px만큼 둥글게*/
+  }
+  div#spring img:hover /*이미지 호버시*/
+  {
+    border : 2px solid rgba(255,255,255,0); /*투명한 윤곽선이 생김 누르는 듯한 효과 주려고 적용함*/
+  }
+ /*다른 계절도 모두 동일 하므로 생략*/
+  #summer
+  {
+    width : 400px;
+    height : 740px;
+    position : absolute;
+    left : 300px;
+  }
+  div#summer img
+  {
+  }
+  div#summer img:hover
+  {
+    border : 3px solid rgba(255,255,255,0);
+  }
+  #fall
+  {
+    width : 400px;
+    height : 740px;
+    position : absolute;
+    left : 500px;
+  }
+  div#fall img
+  {
+  }
+  div#fall img:hover
+  {
+    border : 3px solid rgba(255,255,255,0);
+  }
+
+  #winter
+  {
+    width : 400px;
+    height : 740px;
+    position : absolute;
+    left : 750px;
+  }
+
+  div#winter img
+  {
+    border-radius: 0 15px  15px 0 ;
+  }
+  div#winter img:hover
+  {
+    border : 3px solid rgba(255,255,255,0);
+  }
+  /*지역페이지에서는 옆에 지역선택 태그가 있기 때문에 여기서 별로도 English고정바 둥글기만 조절함*/
+  #English{
+    border-radius: 0 10px 10px 0;
+  }
+  </style>
+</head>
+<body>
+
+  <div>
+    <header>
+      <nav id="header_menu_nav"> <!--우측 상단 고정바-->
+            <ul>
+              <li id="English" class="nav_menu_li"><a href="HOME_Eng.html" class="nav_menu_a">English</a></li>
+              <li id="Korea" class="nav_menu_li"><a href="HOME.html" class="nav_menu_a">한국어</a></li>
+              <li id="Home" class="nav_menu_li"><a href="HOME.html" class="nav_menu_a">HOME</a></li>
+            </ul>
+      </nav>
+      <a href="HOME.html"><img id="Logo" src="./images/LOGO.png"/></a> <!-- 홈페이지 로고-->
+    </header>
+    <article>
+      <section> <!-- 봄 여름 가을 겨울 이미지 선택하여 다음 페이지로 넘어감 -->
+        <div id="season" onmouseout="SeasonOut(this)"> <!-- 마우스가 div밖으로 나갔을 때 모든 이미지들이 선명해지게 하기위한 함수-->
+        <div onmouseover="SpringOver(this)" id="spring"> <!-- 스프링 이미지 호버시 주변 이미지들을 흐리게 해주기 위한 함수--><!-- 다음페이지로 갈때  계절정보를 세션스토리지로 넘기기 위한 함수-->
+         <a href="Select.html"><img src="./images/Spring.png"/></a>
+       </div> <!-- 다른 계절도 모두 동일하므로 생략-->
+        <div onmouseover="SummerOver(this)" id="summer">
+          <a href="Select.html"><img src="./images/Summer.png" onmouseover="Season_Choose(2)"/></a>
+        </div>
+        <div onmouseover="FallOver(this)" id="fall">
+          <a href="Select.html"><img src="./images/Fall.png" onmouseover="Season_Choose(3)"/></a>
+        </div>
+        <div onmouseover="WinterOver(this)" id="winter">
+          <a href="Select.html"><img src="./images/Winter.png" onmouseover="Season_Choose(4)"/></a>
+        </div>
+       </div>
+      </section>
+    </article>
+    <footer>
+    </footer>
+</div>
+<script>
+function SpringOver(obj){ //계절 호버시 다른 계절을 흐릿하게 하기 위한 함수
+  sessionStorage.setItem("season_num",1); // 다음페이지로 넘어갈 때 계절정보를 저장하게 해주는 세션스토리지
+  document.getElementById("spring").style.opacity = "1"; //마우스가 올라가 있는 계절 사진을 제외한 계절들은 투명도를 0.3으로 지정하고 배경색을 흰색 0.3으로 지정하여 흐릿하게 보이게함
+  document.getElementById("summer").style.opacity = "0.3";
+  document.getElementById("fall").style.opacity = "0.3";
+  document.getElementById("winter").style.opacity = "0.3";
+  document.getElementById("season").style.backgroundColor ="rgba(255,255,255,0.3)";
+}//다른 계절도 마찬가지이므로 생략
+function SummerOver(obj){
+  sessionStorage.setItem("season_num",2);
+  document.getElementById("spring").style.opacity = "0.3";
+  document.getElementById("summer").style.opacity = "1";
+  document.getElementById("fall").style.opacity = "0.3";
+  document.getElementById("winter").style.opacity = "0.3";
+  document.getElementById("season").style.backgroundColor ="rgba(255,255,255,0.3)";
+}
+function FallOver(obj){
+  sessionStorage.setItem("season_num",3);
+  document.getElementById("spring").style.opacity = "0.3";
+  document.getElementById("summer").style.opacity = "0.3";
+  document.getElementById("fall").style.opacity = "1";
+  document.getElementById("winter").style.opacity = "0.3";
+  document.getElementById("season").style.backgroundColor ="rgba(255,255,255,0.3)";
+}
+function WinterOver(obj){
+  sessionStorage.setItem("season_num",4);
+  document.getElementById("spring").style.opacity = "0.3";
+  document.getElementById("summer").style.opacity = "0.3";
+  document.getElementById("fall").style.opacity = "0.3";
+  document.getElementById("winter").style.opacity = "1";
+  document.getElementById("season").style.backgroundColor ="rgba(255,255,255,0.3)";
+}
+function SeasonOut(obj){ // 마우스가 div밖으로 나갔을 때
+  document.getElementById("spring").style.opacity = "1"; // 모든 계절 투명도를 1로 설정하고 배경색을 없앰
+  document.getElementById("summer").style.opacity = "1";
+  document.getElementById("fall").style.opacity = "1";
+  document.getElementById("winter").style.opacity = "1";
+  document.getElementById("season").style.backgroundColor ="none";
+}
+</script>
+</body>
+</html>

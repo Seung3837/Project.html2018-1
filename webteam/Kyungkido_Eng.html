@@ -1,0 +1,641 @@
+<!doctype html>
+<html>
+<head>
+  <title>Kyungkido Festival</title>
+  <link href="style.css" rel="stylesheet"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+  $(document).ready(function () {
+  $('.nav_menu_li').hover(function () {
+  $(this).find('.inner-menu').show();
+  }, function () {
+  $(this).find('.inner-menu').hide();
+  });
+  });
+  </script>
+  <style>
+  content
+  {
+    width : 1200px;
+  }
+  </style>
+  <script>
+  window.onload function()
+  {
+    var season = localStorage.getItem('Season');
+    if(season == "Spring")
+    {
+      Season_Selector(1);
+    }
+    else if(season == "Summer")
+    {
+      Season_Selector(2);
+    }
+    else if(season == "Fall");
+    {
+      Season_Selector(3);
+    }
+    else if(season == "Winter")
+    {
+      Season_Selector(4);
+    }
+  }
+  </script>
+  <script>
+  var Spring_arr=["images/Kyungkido images/꽃박람회/꽃박람회 (1).jpg", "images/Kyungkido images/꽃박람회/꽃박람회 (2).jpg", "images/Kyungkido images/꽃박람회/꽃박람회 (3).jpg",
+"images/Kyungkido images/꽃박람회/꽃박람회 (4).jpg", "images/Kyungkido images/꽃박람회/꽃박람회 (5).jpg", "images/Kyungkido images/꽃박람회/꽃박람회 (6).jpg" , "images/Kyungkido images/꽃박람회/꽃박람회 (7).jpg"];
+var Spring_arr2=["images/Kyungkido images/서울랜드/서울랜드 (1).jpg", "images/Kyungkido images/서울랜드/서울랜드 (2).jpg", "images/Kyungkido images/서울랜드/서울랜드 (3).jpg",
+"images/Kyungkido images/서울랜드/서울랜드 (4).jpg", "images/Kyungkido images/서울랜드/서울랜드 (5).jpg", "images/Kyungkido images/서울랜드/서울랜드 (6).jpg",
+"images/Kyungkido images/서울랜드/서울랜드 (7).jpg", "images/Kyungkido images/서울랜드/서울랜드 (8).jpg"];
+  var Spring_i = 0;
+  var Spring_j = 0;
+
+  var Summer_arr=["images/Kyungkido images/레인보우/레인보우 (1).jpg", "images/Kyungkido images/레인보우/레인보우 (2).jpg", "images/Kyungkido images/레인보우/레인보우 (3).jpg",
+"images/Kyungkido images/레인보우/레인보우 (4).jpg", "images/Kyungkido images/레인보우/레인보우 (5).jpg", "images/Kyungkido images/레인보우/레인보우 (6).jpg"];
+var Summer_arr2=["images/Kyungkido images/양평물축제/양평물축제 (1).jpg", "images/Kyungkido images/양평물축제/양평물축제 (2).jpg", "images/Kyungkido images/양평물축제/양평물축제 (3).jpg",
+"images/Kyungkido images/양평물축제/양평물축제 (4).jpg", "images/Kyungkido images/양평물축제/양평물축제 (5).jpg", "images/Kyungkido images/양평물축제/양평물축제 (6).jpg"];
+  var Summer_i = 0;
+  var Summer_j = 0;
+
+  var Fall_arr=["images/Kyungkido images/수원화성/화성1.jpg", "images/Kyungkido images/수원화성/화성2.jpg", "images/Kyungkido images/수원화성/화성3.jpg", "images/Kyungkido images/수원화성/화성4.jpg", "images/Kyungkido images/수원화성/화성5.jpg",
+  "images/Kyungkido images/수원화성/화성6.jpg", "images/Kyungkido images/수원화성/화성7.jpg", "images/Kyungkido images/수원화성/화성8.jpg", "images/Kyungkido images/수원화성/화성9.jpg", "images/Kyungkido images/수원화성/화성10.jpg"];
+  var Fall_arr2=["images/Kyungkido images/자라섬/자라섬.jpg", "images/Kyungkido images/자라섬/자라섬-1.jpg", "images/Kyungkido images/자라섬/자라섬-2.jpg", "images/Kyungkido images/자라섬/자라섬-3.jpg",
+   "images/Kyungkido images/자라섬/자라섬-4.jpg", "images/Kyungkido images/자라섬/자라섬-5.jpg" ];
+  var Fall_i = 0;
+  var Fall_j = 0;
+
+  var Winter_arr=["images/Kyungkido images/아인스월드/아인스월드.jpg", "images/Kyungkido images/아인스월드/아인스월드_1.jpg", "images/Kyungkido images/아인스월드/아인스월드_2.jpg",
+"images/Kyungkido images/아인스월드/아인스월드_3.jpg", "images/Kyungkido images/아인스월드/아인스월드_4.jpg", "images/Kyungkido images/아인스월드/아인스월드_5.jpg",
+"images/Kyungkido images/아인스월드/아인스월드_6.jpg", "images/Kyungkido images/아인스월드/아인스월드_7.jpg", "images/Kyungkido images/아인스월드/아인스월드_8.jpg",
+"images/Kyungkido images/아인스월드/아인스월드_9.jpg", "images/Kyungkido images/아인스월드/아인스월드_10.jpg", "images/Kyungkido images/아인스월드/아인스월드_11.jpg", "images/Kyungkido images/아인스월드/아인스월드_12.jpg"];
+var Winter_arr2=["images/Kyungkido images/프로방스/프로방스 (1).jpg", "images/Kyungkido images/프로방스/프로방스 (2).jpg", "images/Kyungkido images/프로방스/프로방스 (3).jpg",
+"images/Kyungkido images/프로방스/프로방스 (4).jpg", "images/Kyungkido images/프로방스/프로방스 (5).jpg", "images/Kyungkido images/프로방스/프로방스 (6).jpg",
+"images/Kyungkido images/프로방스/프로방스 (7).jpg", "images/Kyungkido images/프로방스/프로방스 (8).jpg", "images/Kyungkido images/프로방스/프로방스 (9).jpg",
+"images/Kyungkido images/프로방스/프로방스 (10).jpg", "images/Kyungkido images/프로방스/프로방스 (11).jpg", "images/Kyungkido images/프로방스/프로방스 (12).jpg", "images/Kyungkido images/프로방스/프로방스 (13).jpg",
+"images/Kyungkido images/프로방스/프로방스 (14).jpg", "images/Kyungkido images/프로방스/프로방스 (15).jpg", "images/Kyungkido images/프로방스/프로방스 (16).jpg", "images/Kyungkido images/프로방스/프로방스 (17).jpg",
+ "images/Kyungkido images/프로방스/프로방스 (18).jpg"];
+  var Winter_i = 0;
+  var Winter_j = 0;
+
+  var Spring_interval, Spring_interval2;
+  var Summer_interval, Summer_interval2;
+  var Fall_interval, Fall_interval2;
+  var Winter_interval, Winter_interval2;
+
+  function start_Spring_interval(){
+    var Spring_image = document.getElementById('Event_Spring_image_1');
+    var Spring_image2 = document.getElementById('Event_Spring_image_2');
+    Spring_interval = setInterval(function(){
+      Spring_image.src = Spring_arr[Spring_i%6];
+      Spring_i = Spring_i + 1;
+    }, 1000);//1000= 1sec
+    Spring_interval2 = setInterval(function(){
+      Spring_image2.src = Spring_arr2[Spring_j%8];
+      Spring_j = Spring_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Spring_interval(){
+    clearInterval(Spring_interval);
+    clearInterval(Spring_interval2);
+  }
+  function start_Summer_interval(){
+    var Summer_image = document.getElementById('Event_Summer_image_1');
+    var Summer_image2 = document.getElementById('Event_Summer_image_2');
+    Summer_interval = setInterval(function(){
+      Summer_image.src = Summer_arr[Summer_i%6];
+      Summer_i = Summer_i + 1;
+    }, 1000);//1000= 1sec
+    Summer_interval2 = setInterval(function(){
+      Summer_image2.src = Summer_arr2[Summer_j%6];
+      Summer_j = Summer_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Summer_interval(){
+    clearInterval(Summer_interval);
+    clearInterval(Summer_interval2);
+  }
+  function start_Fall_interval(){
+    var Fall_image = document.getElementById('Event_Fall_image_1');
+    var Fall_image2 = document.getElementById('Event_Fall_image_2');
+    Fall_interval = setInterval(function(){
+      Fall_image.src = Fall_arr[Fall_i%10];
+      Fall_i = Fall_i + 1;
+    }, 1000);//1000= 1sec
+    Fall_interval2 = setInterval(function(){
+      Fall_image2.src = Fall_arr2[Fall_j%6];
+      Fall_j = Fall_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Fall_interval(){
+    clearInterval(Fall_interval);
+    clearInterval(Fall_interval2);
+  }
+  function start_Winter_interval(){
+    var Winter_image = document.getElementById('Event_Winter_image_1');
+    var Winter_image2 = document.getElementById('Event_Winter_image_2');
+    Winter_interval = setInterval(function(){
+      Winter_image.src = Winter_arr[Winter_i%13];
+      Winter_i = Winter_i + 1;
+    }, 1000);//1000= 1sec
+    Winter_interval2 = setInterval(function(){
+      Winter_image2.src = Winter_arr2[Winter_j%18];
+      Winter_j = Winter_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Winter_interval(){
+    clearInterval(Winter_interval);
+    clearInterval(Winter_interval2);
+  }
+  </script>
+</head>
+<body>
+  <div>
+    <header>
+      <nav id="header_menu_nav">
+            <ul>
+              <li id="Sel" class="nav_menu_li">
+                <span>Kyungki</span>
+                <ul class="inner-menu">
+                  <li class="inner-menu-item"><a href="Choongchung_Eng.html">Choongchung</a></li>
+                  <li class="inner-menu-item"><a href="Kangwondo_Eng.html">Kangwon</a></li>
+                  <li class="inner-menu-item"><a href="Kyungsangdo_Eng.html">Kyungsang</a></li>
+                  <li class="inner-menu-item"><a href="Jullado.html_Eng">Jeolla</a></li>
+                  <li class="inner-menu-item"><a href="Jejudo.html_Eng">Jeju</a></li>
+                </ul>
+              </li>
+              <li id="English" class="nav_menu_li"><a href="Kyungkido_Eng.html" class="nav_menu_a">English</a></li>
+              <li id="Korea" class="nav_menu_li"><a href="Kyungkido.html" class="nav_menu_a">한국어</a></li>
+              <li id="Home" class="nav_menu_li"><a href="HOME_Eng.html" class="nav_menu_a">HOME</a></li>
+            </ul>
+      </nav>
+      <a href="HOME_Eng.html"><img id="Logo" src="./images/LOGO.png" width="400px" height="100px"/></a>
+    </header>
+    <aside>
+      <div>
+        <nav id="Season_bar">
+          <ul>
+            <li id="Spring" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Spring_Month_div(this)"><a href="#" id="Spring_nav_a" class="nav_season_a" onclick="Season_Selector(1)">Spring</a></li>
+            <li id="Summer" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Summer_Month_div(this)"><a href="#" id="Summer_nav_a" class="nav_season_a" onclick="Season_Selector(2)">Summer</a></li>
+            <li id="Fall" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Fall_Month_div(this)"><a href="#" id="Fall_nav_a" class="nav_season_a" onclick="Season_Selector(3)">Autumn</a></li>
+            <li id="Winter" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Winter_Month_div(this)"><a href="#" id="Winter_nav_a" class="nav_season_a" onclick="Season_Selector(4)">Winter</a></li>
+            <li id="Month_nav" class="nav_season_li"><span id="Month_nav_a" class="nav_season_a"></span></li>
+          </ul>
+          </nav>
+        </div>
+      </aside>
+      <article>
+        <section>
+          <div id="Eventinfor">
+            <div id="Exitinfor">
+              <a><img src="./images/X.png" width=30 height=30 onClick="Inforhide()"/></a>
+            </div>
+            <div id="Right">
+              <img src="./images/right.png" width=30 height=30 onClick="Next(1)"/>
+            </div>
+            <div id="Infor">
+              <div id="Ipicture"><img id="Image"></div>
+              <div class="Ititle"><p id="Title"></p></div>
+              <div class="Icontent">Festival term<p id="Term"></p></div>
+              <div class="Icontent">Address<p id="Address"></p></div>
+              <div class="Icontent">Festival place<p id="Place"></p></div>
+              <div class="Icontent">Phonenumber<p id="Phonenumber"></p></div>
+              <div class="Icontent">Homepage<p id="Homepage"></p></div>
+            </div>
+            <div id="Eventintro">
+              <div class="Introduce">Introduction<p id="Intro"></p></div>
+            </div>
+          </div>
+
+          <div id="API">
+            <div id="Exitinfor">
+              <a><img src="./images/X.png" width=30 height=30 onClick="Inforhide()"/></a>
+            </div>
+            <div id="Left">
+              <img src="./images/left.png" width=30 height=30 onClick="Next(2)"/>
+            </div>
+            <div id="Map"></div>
+          </div>
+
+        </section>
+        <content>
+          <div id="Event_Spring">
+            <div class="Each_Event">
+              <div class="Event_Information" onclick="Infornum(1)"><a>introduction</a></div>
+              <img src="images/Kyungkido images/꽃박람회/꽃박람회 (6).jpg" id="Event_Spring_image_1" width=300 height=400/>
+              </div>
+              <div class="Each_Event">
+                <div class="Event_Information" onclick="Infornum(2)"><a>introduction</a></div>
+                <img src="images/Kyungkido images/서울랜드/서울랜드 (8).jpg" id="Event_Spring_image_2" width=300 height=400/>
+                </div>
+            </div>
+            <div id="Event_Summer">
+              <div class="Each_Event">
+                <div class="Event_Information" onclick="Infornum(3)"><a>introduction</a></div>
+                <img src="images/Kyungkido images/레인보우/레인보우 (7).jpg" id="Event_Summer_image_1" width=300 height=400/>
+                </div>
+                <div class="Each_Event">
+                  <div class="Event_Information" onclick="Infornum(4)"><a>introduction</a></div>
+                  <img src="images/Kyungkido images/양평물축제/양평물축제 (6).jpg" id="Event_Summer_image_2" width=300 height=400/>
+                  </div>
+              </div>
+              <div id="Event_Fall">
+                <div class="Each_Event">
+                  <div class="Event_Information" onclick="Infornum(5)"><a>introduction</a></div>
+                  <img src="images/Kyungkido images/수원화성/화성10.jpg" id="Event_Fall_image_1" width=300 height=400/>
+                  </div>
+                  <div class="Each_Event">
+                    <div class="Event_Information" onclick="Infornum(6)"><a>introduction</a></div>
+                    <img src="images/Kyungkido images/자라섬/자라섬-5.jpg" id="Event_Fall_image_2" width=300 height=400/>
+                    </div>
+                </div>
+                <div id="Event_Winter" >
+                  <div class="Each_Event">
+                    <div class="Event_Information" onclick="Infornum(7)"><a>introduction</a></div>
+                    <img src="images/Kyungkido images/아인스월드/아인스월드_12.jpg" id="Event_Winter_image_1" width=300 height=400/>
+                    </div>
+                    <div class="Each_Event">
+                      <div class="Event_Information" onclick="Infornum(8)"><a>introduction</a></div>
+                      <img src="images/Kyungkido images/프로방스/프로방스 (18).jpg" id="Event_Winter_image_2" width=300 height=400/>
+                      </div>
+                  </div>
+        </content>
+      </article>
+  </div>
+  <script>
+  </script>
+  <script>
+  if (typeof(Storage) !== "undefined") {
+      // Retrieve
+      var a;
+      var Season_bar_num;
+      a = sessionStorage.getItem("season_num");
+      Season_bar_num = a;
+      Season_Selector(a);
+      Season_bar_fix(Season_bar_num);
+  }
+
+  function Season_bar_fix(Season_bar_num){
+      if(Season_bar_num==1){//
+        document.getElementById("Summer_nav_a").innerHTML = "Summer";
+        document.getElementById("Fall_nav_a").innerHTML = "Autumn";
+        document.getElementById("Winter_nav_a").innerHTML = "Winter";
+        document.getElementById("Summer").style.background = "rgb(28,225,126)";
+        document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Fall").style.background = "rgb(28,225,126)";
+        document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Winter").style.background = "rgb(28,225,126)";
+        document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Spring").style.background = 'url(images/봄_2.jpg)';
+        document.getElementById("Spring_nav_a").style.color = "rgba(0,0,0,0)";
+        document.getElementById("Spring_nav_a").innerHTML = "";
+      }
+      else if(Season_bar_num==2){
+        document.getElementById("Spring_nav_a").innerHTML = "Spring";
+        document.getElementById("Fall_nav_a").innerHTML = "Autumn";
+        document.getElementById("Winter_nav_a").innerHTML = "Winter";
+        document.getElementById("Spring").style.background = "rgb(28,225,126)";
+        document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Fall").style.background = "rgb(28,225,126)";
+        document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Winter").style.background = "rgb(28,225,126)";
+        document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Summer").style.background = 'url(images/여름_2.jpg)';
+        document.getElementById("Summer_nav_a").style.color = "rgba(0,0,0,0)";
+        document.getElementById("Summer_nav_a").innerHTML = "";
+      }
+      else if(Season_bar_num==3){
+        document.getElementById("Spring_nav_a").innerHTML = "Spring";
+        document.getElementById("Summer_nav_a").innerHTML = "Summer";
+        document.getElementById("Winter_nav_a").innerHTML = "Winter";
+        document.getElementById("Spring").style.background = "rgb(28,225,126)";
+        document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Summer").style.background = "rgb(28,225,126)";
+        document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Winter").style.background = "rgb(28,225,126)";
+        document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Fall").style.background = 'url(images/가을_2.jpg)';
+        document.getElementById("Fall_nav_a").style.color = "rgba(0,0,0,0)";
+        document.getElementById("Fall_nav_a").innerHTML = "";
+      }
+      else if(Season_bar_num==4){
+        document.getElementById("Spring_nav_a").innerHTML = "Spring";
+        document.getElementById("Summer_nav_a").innerHTML = "Summer";
+        document.getElementById("Fall_nav_a").innerHTML = "Autumn";
+        document.getElementById("Spring").style.background = "rgb(28,225,126)";
+        document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Summer").style.background = "rgb(28,225,126)";
+        document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Fall").style.background = "rgb(28,225,126)";
+        document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+        document.getElementById("Winter").style.background = 'url(images/겨울_2.jpg)';
+        document.getElementById("Winter_nav_a").style.color = "rgba(0,0,0,0)";
+        document.getElementById("Winter_nav_a").innerHTML = "";
+      }
+    }
+
+    function Spring_Month_div(obj){
+      document.getElementById("Month_nav_a").innerHTML = "Mar~May";
+      document.getElementById("Month_nav_a").style.color = "white";
+      document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+      document.getElementById("Month_nav").style.display = "block";
+    }
+    function Summer_Month_div(obj){
+      document.getElementById("Month_nav_a").innerHTML = "Jun~Aug";
+      document.getElementById("Month_nav_a").style.color = "white";
+      document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+      document.getElementById("Month_nav").style.display = "block";
+    }
+    function Fall_Month_div(obj){
+      document.getElementById("Month_nav_a").innerHTML = "Sep~Nov";
+      document.getElementById("Month_nav_a").style.color = "white";
+      document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+      document.getElementById("Month_nav").style.display = "block";
+    }
+    function Winter_Month_div(obj){
+      document.getElementById("Month_nav_a").innerHTML = "Dec~Feb";
+      document.getElementById("Month_nav_a").style.color = "white";
+      document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+      document.getElementById("Month_nav").style.display = "block";
+    }
+  function Month_hide(obj){
+    document.getElementById("Month_nav").style.display = "none";//
+  }
+
+  function Inforhide()
+  {
+    document.getElementById('Eventinfor').style.display = "none";
+    document.getElementById('API').style.display = "none";
+  }
+  function Next(num)
+{
+  if(num == 1)
+  {
+    document.getElementById('API').style.display = "block";
+    document.getElementById('Eventinfor').style.display = "none";
+  }
+  if(num == 2)
+  {
+    document.getElementById('Eventinfor').style.display = "block";
+    document.getElementById('API').style.display = "none";
+  }
+}
+
+  function Infornum(num)
+  {
+    if(num == 1)
+    {
+      document.getElementById('Image').src = "./images/Kyungkido images/꽃박람회/꽃박람회 (6).jpg";
+      document.getElementById('Title').textContent = "Goyang International Flower Show";
+      document.getElementById('Term').textContent = "2018.04.27 ~ 2018.05.13";
+      document.getElementById('Address').textContent = "Goyang City Lake Park member";
+      document.getElementById('Place').textContent = "Lake Park";
+      document.getElementById('Phonenumber').textContent = "031-908-7750~3 / 외국인 031-908-7642~3";
+      document.getElementById('Homepage').textContent = "http://www.flower.or.kr";
+      document.getElementById('Intro').innerHTML = "There are rare plants that can not be easily seen, indoor gardens decorated with floral arts, colorful outdoor themed gardens, flower culture experience programs, rich performances and events, and flower shops where farmers directly grow and sell them. From Friday to Sunday and holiday nights, the flower gardens create a romantic atmosphere.";
+
+      var doota = {lat: 37.392744, lng: 128.992906};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: doota
+        });
+        var marker = new google.maps.Marker({
+          position: doota,
+          map: map
+        });
+    }
+    else if(num == 2)
+    {
+      document.getElementById('Image').src = "./images/Kyungkido images/서울랜드/서울랜드 (8).jpg";
+      document.getElementById('Title').textContent = "Seoul Land Character Flower Festival";
+      document.getElementById('Term').textContent = "2018.03.24(토)~2018.06.06(수)";
+      document.getElementById('Address').textContent = "Gwangmyeong-ro 181 (Gwacheon-dong, Gwacheon)";
+      document.getElementById('Place').textContent = "Seoul Land";
+      document.getElementById('Phonenumber').textContent = "02-509-6000";
+      document.getElementById('Homepage').textContent = "http://www.seoulland.co.kr";
+      document.getElementById('Intro').innerHTML = "Seoul Land will hold the Spring Festival 'Character Flower Festival' from Saturday, March 24th to Wednesday, June 6th. This spring, Seoul Land will strengthen its position as a character theme park by providing exhibition experiences, events, and parades to meet the popular characters of TV, such as Super Wings, Turning Mead Card, and Lava. Here, spring flowers, such as 'Tulip', have been added to the flowers of spring flowers and hundreds of thousands of flowers to provide richer attractions. During the month of April, the Super Swings play facility, which is the character of the transfigured airplane, is about to open.";
+
+      var nami = {lat: 37.790164, lng: 127.525850};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: nami
+        });
+        var marker = new google.maps.Marker({
+          position: nami,
+          map: map
+        });
+    }
+    else if(num == 3)
+    {
+      document.getElementById('Image').src = "./images/Kyungkido images/레인보우/레인보우 (7).jpg";
+      document.getElementById('Title').textContent = "Rainbow Island";
+      document.getElementById('Term').textContent = "2018.06.02 ~ 2018.06.03";
+      document.getElementById('Address').textContent = "Jarasumro 60(Gapyeong)";
+      document.getElementById('Place').textContent = "Jara Island Camping Ground";
+      document.getElementById('Phonenumber').textContent = "010-3360-7846";
+      document.getElementById('Homepage').textContent = "http://www.rainbowfestival.co.kr";
+      document.getElementById('Intro').innerHTML = "'Rainbow Island Music & Camping' is an all-night stage filled with dawn and daytime in Jarasum. It is a perfect harmony of camping and music. It attracts 10,000 spectators and gives a special romantic departure to the festival audience. Present.";
+
+      var hongcheon = {lat: 37.690342, lng: 127.893943};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: hongcheon
+        });
+        var marker = new google.maps.Marker({
+          position: hongcheon,
+          map: map
+        });
+    }
+    else if(num == 4)
+    {
+      document.getElementById('Image').src = "./images/Kyungkido images/양평물축제/양평물축제 (6).jpg";
+      document.getElementById('Title').textContent = "Yangpyeong Water Festival";
+      document.getElementById('Term').textContent = "2018.08.03(금)~2018.08.05(일)";
+      document.getElementById('Address').textContent = "951-3, Okcheonri, Okcheon-myeon, Yangpyeong-gun, Gyeonggi";
+      document.getElementById('Place').textContent = "Yangpyeong-gun Okcheon Leports Park, Satan-cheon";
+      document.getElementById('Phonenumber').textContent = "Okcheon-myeon Office 031-770-3132, Okcheon-myeon Water Festival Promotion Committee 031-770-3155, Yangpyeong-gun Culture and Tourism Division 031-770-2099";
+      document.getElementById('Homepage').textContent = "http://www.okcheon.or.kr";
+      document.getElementById('Intro').innerHTML = "The 7th 'Yangpyeong Water Festival Ice Water Festival' will be held at Ocheon-myeon Leports Park and Satan-Chun area from August 3 to 5 (three days) from Oct. 2018 in Yangpyeong-gun, Gyeonggi-do. This festival is the Okcheon Water Festival, where local residents and tourists come together to enjoy the festival. It is a summer representative festival where you can enjoy the water war that sprinkles water to each other with wishes originating from the Okcheon water, the way of enjoying the truth based on the oral story, and various ice water and food. During the festival period, the main program 'Water War' is held as a basic theme, and a cool slope, a baby pool and a variety of amusement facilities are set up in harmony with cold weather.";
+
+      var pyungchang = {lat: 37.661695, lng: 128.676314};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: pyungchang
+        });
+        var marker = new google.maps.Marker({
+          position: pyungchang,
+          map: map
+        });
+    }
+    else if(num == 5)
+    {
+      document.getElementById('Image').src = "./images/Kyungkido images/수원화성/화성10.jpg";
+      document.getElementById('Title').textContent = "Suwon Hwaseong";
+      document.getElementById('Term').textContent = "2018.10.12 ~ 2018.10.14";
+      document.getElementById('Address').textContent = "825 Jungjo-ro, Paldal-gu, Suwon, Gyeonggi-do (South Chin-dong)";
+      document.getElementById('Place').textContent = "Hwaseong Fortress, Yongmudae, Suwon Stream, etc. Suwon Hwaseong Members";
+      document.getElementById('Phonenumber').textContent = "031-290-3633";
+      document.getElementById('Homepage').textContent = "http://www.swcf.or.kr";
+      document.getElementById('Intro').innerHTML = "Suwon Hwaseong Cultural Festival will be held in October 2018, which is the 55th annual Suwon traditional culture and tourism festival in Suweon Hwaseong, a World Heritage site built as a grand dream of the 22nd Grand Jundo Grand King of the Joseon Dynasty.";
+
+      var sokcho = {lat: 38.208419, lng: 128.593811};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: sokcho
+        });
+        var marker = new google.maps.Marker({
+          position: sokcho,
+          map: map
+        });
+    }
+    else if(num == 6)
+    {
+      document.getElementById('Image').src = "./images/Kyungkido images/자라섬/자라섬-5.jpg";
+      document.getElementById('Title').textContent = "Jarasum International Jazz Festival 2018";
+      document.getElementById('Term').textContent = "2018.10.12. ~ 2018.10.14";
+      document.getElementById('Address').textContent = "Gapyeong-gun, Gapyeong-gun Daljunri 1-1";
+      document.getElementById('Place').textContent = "Gapyeong-eup Jara Island Area";
+      document.getElementById('Phonenumber').textContent = "031-581-2813~4";
+      document.getElementById('Homepage').textContent = "http://www.jarasumjazz.com";
+      document.getElementById('Intro').innerHTML = "<Jarasum International Jazz Festival> is the jazz festival that represents the Republic of Korea on October 3 every year. The stage of more than 10 is spread in Jara Island in Gapyeong-gun and in Gapyeong-eup. It is famous for its top-class jazz artists and beautiful natural environment. Over the past 14 times, there have been many active international exchanges, including visits to more than 40 countries by many artists. As a project for the development of Korean jazz, Jazz 'creative music camp and Jarasum International Jazz Competition are held every two years to nurture and discover young jazz talents. It was selected as the cultural tourism excellent festival selected by the Ministry of Culture, Sports and Tourism for four consecutive years. In addition to being selected as the representative festival from 2018, it was designated as the ambassador for promoting the green life of the Ministry of the Environment. During the festival, we will grow and grow with local produce such as jazz makgeolli / jazz wine / bangsho using Gapyeong's agricultural products.";
+
+      var hanwoo = {lat: 37.497631, lng: 127.987850};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: hanwoo
+        });
+        var marker = new google.maps.Marker({
+          position: hanwoo,
+          map: map
+        });
+    }
+    else if(num == 7)
+    {
+      document.getElementById('Image').src = "./images/Kyungkido images/아인스월드/아인스월드_12.jpg";
+      document.getElementById('Title').textContent = "Bucheon Aiinsworld Light Festival - World Night View Fantasy Light Festival";
+      document.getElementById('Term').textContent = "2018.11 ~ 2019.02 (17:00~23:00)";
+      document.getElementById('Address').textContent = "Doyaklo 1 ,Wonmi-gu, Bucheonsi, Gyeonkido (Sangdong)경기도 부천시 원미구 도약로 1 (상동)";
+      document.getElementById('Place').textContent = "Aiinsworld";
+      document.getElementById('Phonenumber').textContent = "032-320-6000";
+      document.getElementById('Homepage').textContent = "http://www.aiinsworld.com";
+      document.getElementById('Intro').innerHTML = "World Nightlife Fantasy Light Festival begins at Einsworld, the world's best miniature theme park. Located in Bucheon, Gyeonggi-do, it is close to downtown. Subway Line 7 Samsan Gymnasium Station and public transportation are also convenient, so that anyone can enjoy it comfortably at dinner time.";
+
+      var samcheoksun = {lat: 37.229692, lng: 129.346098};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: samcheoksun
+        });
+        var marker = new google.maps.Marker({
+          position: samcheoksun,
+          map: map
+        });
+    }
+    else if(num == 8)
+    {
+      document.getElementById('Image').src = "./images/Kyungkido images/프로방스/프로방스 (18).jpg";
+      document.getElementById('Title').textContent = "Paju Provence Starlight Festival";
+      document.getElementById('Term').textContent = "2017.11.25. ~ 2018.03.31";
+      document.getElementById('Address').textContent = "77, Tanhyunmyeon, Pajusi, Gyeonggido";
+      document.getElementById('Place').textContent = "Paju Provence Starlight Festival";
+      document.getElementById('Phonenumber').textContent = "031-946-6395";
+      document.getElementById('Homepage').textContent = "http://www.provence.town";
+      document.getElementById('Intro').innerHTML = "One of the attractions of the winter festival was the beautiful and fantastic 'Starlight Festival' in Paju Provence. It plans to operate long-term operation for approximately two years from November 25, It has a romantic Christmas atmosphere and it is very popular with both young and old people because of its colorful LED decoration, Especially, this Paju Provence 's Starlight Festival is a spectacular show featuring spectacular visuals through a large screen, a dolphin molding that seems to be swimming on the sea, a heart tunnel, and various photo zones.";
+
+      var lightart = {lat: 37.795103, lng: 128.896593};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: lightart
+        });
+        var marker = new google.maps.Marker({
+          position: lightart,
+          map: map
+        });
+    }
+
+    document.getElementById('Eventinfor').style.display = "block";
+  }
+
+  function Season_Selector(num)
+  {
+    if(num == 1)
+    {
+      Season_bar_num = 1;//
+      stop_Summer_interval();
+      stop_Fall_interval();
+      stop_Winter_interval();
+      start_Spring_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 2)
+    {
+      Season_bar_num = 2;//
+      stop_Spring_interval();
+      stop_Fall_interval();
+      stop_Winter_interval();
+      start_Summer_interval();
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Summer").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 3)
+    {
+      Season_bar_num = 3;//
+      stop_Spring_interval();
+      stop_Summer_interval();
+      stop_Winter_interval();
+      start_Fall_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 4)
+    {
+      Season_bar_num = 4;//
+      stop_Spring_interval();
+      stop_Summer_interval();
+      stop_Fall_interval();
+      start_Winter_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+    }
+    Season_bar_fix(Season_bar_num);//
+  }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgxRAiLM6U879XESA7-6C8GvnaouETN3Y&callback=initMap"></script>
+</body>
+</html>

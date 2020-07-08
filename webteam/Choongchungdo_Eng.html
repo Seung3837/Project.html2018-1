@@ -1,0 +1,609 @@
+<!doctype html>
+<html>
+<head>
+  <title>Choongchungdo Festival</title>
+  <link href="style.css" rel="stylesheet"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+  $(document).ready(function () {
+  $('.nav_menu_li').hover(function () {
+  $(this).find('.inner-menu').show();
+  }, function () {
+  $(this).find('.inner-menu').hide();
+  });
+  });
+  </script>
+  <style>
+
+  content
+  {
+    width : 1200px;
+    z-index:0
+  }
+  </style>
+  <script>
+  var Spring_arr=["images/Choongchungdo images/태안/태안 (1).jpg", "images/Choongchungdo images/태안/태안 (2).jpg", "images/Choongchungdo images/태안/태안 (3).jpg",
+"images/Choongchungdo images/태안/태안 (4).jpg", "images/Choongchungdo images/태안/태안 (5).jpg", "images/Choongchungdo images/태안/태안 (6).jpg"];
+var Spring_arr2=["images/Choongchungdo images/생거진천/생거진천 (1).jpeg", "images/Choongchungdo images/생거진천/생거진천 (2).jpg", "images/Choongchungdo images/생거진천/생거진천 (3).jpg"];
+  var Spring_i = 0;
+  var Spring_j = 0;
+
+  var Summer_arr=["images/Choongchungdo images/향수/향수 (1).jpg", "images/Choongchungdo images/향수/향수 (2).jpg", "images/Choongchungdo images/향수/향수 (3).jpg",
+"images/Choongchungdo images/향수/향수 (4).jpg", "images/Choongchungdo images/향수/향수 (5).jpg", "images/Choongchungdo images/향수/향수 (6).jpg",
+"images/Choongchungdo images/향수/향수 (7).jpg"];
+var Summer_arr2=["images/Choongchungdo images/괴산/괴산 (1).jpg", "images/Choongchungdo images/괴산/괴산 (2).jpg", "images/Choongchungdo images/괴산/괴산 (3).jpg"];
+  var Summer_i = 0;
+  var Summer_j = 0;
+
+  var Fall_arr=["images/Choongchungdo images/음성/음성 (1).jpg", "images/Choongchungdo images/음성/음성 (2).jpg", "images/Choongchungdo images/음성/음성 (3).jpg",
+  "images/Choongchungdo images/음성/음성 (4).jpg", "images/Choongchungdo images/음성/음성 (5).jpg", "images/Choongchungdo images/음성/음성 (6).jpg"];
+  var Fall_arr2=["images/Choongchungdo images/영동/영동 (1).jpg", "images/Choongchungdo images/영동/영동 (2).jpg", "images/Choongchungdo images/영동/영동 (3).jpg",
+"images/Choongchungdo images/영동/영동 (4).jpg", "images/Choongchungdo images/영동/영동 (5).jpg", "images/Choongchungdo images/영동/영동 (6).jpg",
+"images/Choongchungdo images/영동/영동 (7).jpg", "images/Choongchungdo images/영동/영동 (8).jpg", "images/Choongchungdo images/영동/영동 (9).jpg"];
+  var Fall_i = 0;
+  var Fall_j = 0;
+
+  var Winter_arr=["images/Choongchungdo images/난계/난계 (1).jpg", "images/Choongchungdo images/난계/난계 (2).jpg", "images/Choongchungdo images/난계/난계 (3).jpg",
+  "images/Choongchungdo images/난계/난계 (4).jpg", "images/Choongchungdo images/난계/난계 (5).jpg"];
+  var Winter_arr2=["images/Choongchungdo images/칠갑산/칠갑산 (1).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (2).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (3).jpg",
+"images/Choongchungdo images/칠갑산/칠갑산 (4).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (5).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (6).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (7).jpg",
+"images/Choongchungdo images/칠갑산/칠갑산 (8).jpg", "images/Choongchungdo images/칠갑산/칠갑산 (9).jpg"];
+  var Winter_i = 0;
+  var Winter_j = 0;
+
+  var Spring_interval, Spring_interval2;
+  var Summer_interval, Summer_interval2;
+  var Fall_interval, Fall_interval2;
+  var Winter_interval, Winter_interval2;
+
+  function start_Spring_interval(){
+    var Spring_image = document.getElementById('Event_Spring_image_1');
+    var Spring_image2 = document.getElementById('Event_Spring_image_2');
+    Spring_interval = setInterval(function(){
+      Spring_image.src = Spring_arr[Spring_i%6];
+      Spring_i = Spring_i + 1;
+    }, 1000);//1000= 1sec
+    Spring_interval2 = setInterval(function(){
+      Spring_image2.src = Spring_arr2[Spring_j%3];
+      Spring_j = Spring_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Spring_interval(){
+    clearInterval(Spring_interval);
+    clearInterval(Spring_interval2);
+  }
+  function start_Summer_interval(){
+    var Summer_image = document.getElementById('Event_Summer_image_1');
+    var Summer_image2 = document.getElementById('Event_Summer_image_2');
+    Summer_interval = setInterval(function(){
+      Summer_image.src = Summer_arr[Summer_i%7];
+      Summer_i = Summer_i + 1;
+    }, 1000);//1000= 1sec
+    Summer_interval2 = setInterval(function(){
+      Summer_image2.src = Summer_arr2[Summer_j%3];
+      Summer_j = Summer_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Summer_interval(){
+    clearInterval(Summer_interval);
+    clearInterval(Summer_interval2);
+  }
+  function start_Fall_interval(){
+    var Fall_image = document.getElementById('Event_Fall_image_1');
+    var Fall_image2 = document.getElementById('Event_Fall_image_2');
+    Fall_interval = setInterval(function(){
+      Fall_image.src = Fall_arr[Fall_i%6];
+      Fall_i = Fall_i + 1;
+    }, 1000);//1000= 1sec
+    Fall_interval2 = setInterval(function(){
+      Fall_image2.src = Fall_arr2[Fall_j%9];
+      Fall_j = Fall_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Fall_interval(){
+    clearInterval(Fall_interval);
+    clearInterval(Fall_interval2);
+  }
+  function start_Winter_interval(){
+    var Winter_image = document.getElementById('Event_Winter_image_1');
+    var Winter_image2 = document.getElementById('Event_Winter_image_2');
+    Winter_interval = setInterval(function(){
+      Winter_image.src = Winter_arr[Winter_i%5];
+      Winter_i = Winter_i + 1;
+    }, 1000);//1000= 1sec
+    Winter_interval2 = setInterval(function(){
+      Winter_image2.src = Winter_arr2[Winter_j%9];
+      Winter_j = Winter_j + 1;
+    }, 1000);//1000= 1sec
+  }
+  function stop_Winter_interval(){
+    clearInterval(Winter_interval);
+    clearInterval(Winter_interval2);
+  }
+  </script>
+</head>
+<body>
+  <div>
+    <header>
+      <nav id="header_menu_nav">
+            <ul>
+              <li id="Sel" class="nav_menu_li">
+                <span>Choongchung</span>
+                <ul class="inner-menu">
+                  <li class="inner-menu-item"><a href="Kyungkido_Eng.html">Kyungki</a></li>
+                  <li class="inner-menu-item"><a href="Kangwondo_Eng.html">Kangwon</a></li>
+                  <li class="inner-menu-item"><a href="Kyungsangdo_Eng.html">Kyungsang</a></li>
+                  <li class="inner-menu-item"><a href="Jullado.html_Eng">Jeolla</a></li>
+                  <li class="inner-menu-item"><a href="Jejudo.html_Eng">Jeju</a></li>
+                </ul>
+              </li>
+              <li id="English" class="nav_menu_li"><a href="Choongchungdo_Eng.html" class="nav_menu_a">English</a></li>
+              <li id="Korea" class="nav_menu_li"><a href="Choongchungdo.html" class="nav_menu_a">한국어</a></li>
+              <li id="Home" class="nav_menu_li"><a href="HOME_Eng.html" class="nav_menu_a">HOME</a></li>
+            </ul>
+      </nav>
+      <a href="HOME_Eng.html"><img id="Logo" src="./images/LOGO.png" width="400px" height="100px"/></a>
+    </header>
+    <aside>
+      <div>
+        <nav id="Season_bar">
+          <ul>
+            <li id="Spring" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Spring_Month_div(this)"><a href="#" id="Spring_nav_a" class="nav_season_a" onclick="Season_Selector(1)">Spring</a></li>
+            <li id="Summer" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Summer_Month_div(this)"><a href="#" id="Summer_nav_a" class="nav_season_a" onclick="Season_Selector(2)">Summer</a></li>
+            <li id="Fall" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Fall_Month_div(this)"><a href="#" id="Fall_nav_a" class="nav_season_a" onclick="Season_Selector(3)">Autumn</a></li>
+            <li id="Winter" class="nav_season_li" onmouseout="Month_hide(this)" onmouseover="Winter_Month_div(this)"><a href="#" id="Winter_nav_a" class="nav_season_a" onclick="Season_Selector(4)">Winter</a></li>
+            <li id="Month_nav" class="nav_season_li"><span id="Month_nav_a" class="nav_season_a"></span></li>
+          </ul>
+          </nav>
+        </div>
+      </aside>
+      <article>
+        <section>
+          <div id="Eventinfor">
+            <div id="Exitinfor">
+              <a><img src="./images/X.png" width=30 height=30 onClick="Inforhide()"/></a>
+            </div>
+            <div id="Right">
+              <img src="./images/right.png" width=30 height=30 onClick="Next(1)"/>
+            </div>
+            <div id="Infor">
+              <div id="Ipicture"><img id="Image"></div>
+              <div class="Ititle"><p id="Title"></p></div>
+              <div class="Icontent">Festival term<p id="Term"></p></div>
+              <div class="Icontent">Address<p id="Address"></p></div>
+              <div class="Icontent">Festival place<p id="Place"></p></div>
+              <div class="Icontent">Phonenumber<p id="Phonenumber"></p></div>
+              <div class="Icontent">Homepage<p id="Homepage"></p></div>
+            </div>
+            <div id="Eventintro">
+              <div class="Introduce">Introduction<p id="Intro"></p></div>
+            </div>
+          </div>
+          <div id="API">
+            <div id="Exitinfor">
+              <a><img src="./images/X.png" width=30 height=30 onClick="Inforhide()"/></a>
+            </div>
+            <div id="Left">
+              <img src="./images/left.png" width=30 height=30 onClick="Next(2)"/>
+            </div>
+            <div id="Map"></div>
+          </div>
+        </section>
+        <content>
+          <div id="Event_Spring">
+            <div class="Each_Event">
+              <div class="Event_Information" onclick="Infornum(1)"><a>Introduction</a></div>
+              <img src="./images/Choongchungdo images/태안/태안 (6).jpg" id="Event_Spring_image_1" width="1200px" height=400/>
+              </div>
+              <div class="Each_Event">
+                <div class="Event_Information" onclick="Infornum(2)"><a>Introduction</a></div>
+                <img src="./images/Choongchungdo images/생거진천/생거진천 (3).jpg" id="Event_Spring_image_2" width=300 height=400/>
+                </div>
+            </div>
+            <div id="Event_Summer">
+              <div class="Each_Event">
+                <div class="Event_Information" onclick="Infornum(3)"><a>Introduction</a></div>
+                <img src="./images/Choongchungdo images/향수/향수 (7).jpg" id="Event_Summer_image_1" width=300 height=400/>
+                </div>
+                <div class="Each_Event">
+                  <div class="Event_Information" onclick="Infornum(4)"><a>Introduction</a></div>
+                  <img src="./images/Choongchungdo images/괴산/괴산 (3).jpg" id="Event_Summer_image_2" width=300 height=400/>
+                  </div>
+              </div>
+              <div id="Event_Fall">
+                <div class="Each_Event">
+                  <div class="Event_Information" onclick="Infornum(5)"><a>Introduction</a></div>
+                  <img src="./images/Choongchungdo images/음성/음성 (6).jpg" id="Event_Fall_image_1" width=300 height=400/>
+                  </div>
+                  <div class="Each_Event">
+                    <div class="Event_Information" onclick="Infornum(6)"><a>Introduction</a></div>
+                    <img src="./images/Choongchungdo images/영동/영동 (9).jpg" id="Event_Fall_image_2" width=300 height=400/>
+                    </div>
+                </div>
+                <div id="Event_Winter" >
+                  <div class="Each_Event">
+                    <div class="Event_Information" onclick="Infornum(7)"><a>Introduction</a></div>
+                    <img src="./images/Choongchungdo images/난계/난계 (5).jpg" id="Event_Winter_image_1" width=300 height=400/>
+                    </div>
+                    <div class="Each_Event">
+                      <div class="Event_Information" onclick="Infornum(8)"><a>Introduction</a></div>
+                      <img src="./images/Choongchungdo images/칠갑산/칠갑산 (9).jpg" id="Event_Winter_image_2" width=300 height=400/>
+                      </div>
+                  </div>
+        </content>
+      </article>
+  </div>
+  <script>
+  if (typeof(Storage) !== "undefined") {
+        // Retrieve
+        var a;
+        var Season_bar_num;
+        a = sessionStorage.getItem("season_num");
+        Season_bar_num = a;
+        Season_Selector(a);
+        Season_bar_fix(Season_bar_num);
+    }
+
+    function Season_bar_fix(Season_bar_num){
+        if(Season_bar_num==1){//
+          document.getElementById("Summer_nav_a").innerHTML = "Summer";
+          document.getElementById("Fall_nav_a").innerHTML = "Autumn";
+          document.getElementById("Winter_nav_a").innerHTML = "Winter";
+          document.getElementById("Summer").style.background = "rgb(28,225,126)";
+          document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Fall").style.background = "rgb(28,225,126)";
+          document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Winter").style.background = "rgb(28,225,126)";
+          document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Spring").style.background = 'url(images/봄_2.jpg)';
+          document.getElementById("Spring_nav_a").style.color = "rgba(0,0,0,0)";
+          document.getElementById("Spring_nav_a").innerHTML = "";
+        }
+        else if(Season_bar_num==2){
+          document.getElementById("Spring_nav_a").innerHTML = "Spring";
+          document.getElementById("Fall_nav_a").innerHTML = "Autumn";
+          document.getElementById("Winter_nav_a").innerHTML = "Winter";
+          document.getElementById("Spring").style.background = "rgb(28,225,126)";
+          document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Fall").style.background = "rgb(28,225,126)";
+          document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Winter").style.background = "rgb(28,225,126)";
+          document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Summer").style.background = 'url(images/여름_2.jpg)';
+          document.getElementById("Summer_nav_a").style.color = "rgba(0,0,0,0)";
+          document.getElementById("Summer_nav_a").innerHTML = "";
+        }
+        else if(Season_bar_num==3){
+          document.getElementById("Spring_nav_a").innerHTML = "Spring";
+          document.getElementById("Summer_nav_a").innerHTML = "Summer";
+          document.getElementById("Winter_nav_a").innerHTML = "Winter";
+          document.getElementById("Spring").style.background = "rgb(28,225,126)";
+          document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Summer").style.background = "rgb(28,225,126)";
+          document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Winter").style.background = "rgb(28,225,126)";
+          document.getElementById("Winter_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Fall").style.background = 'url(images/가을_2.jpg)';
+          document.getElementById("Fall_nav_a").style.color = "rgba(0,0,0,0)";
+          document.getElementById("Fall_nav_a").innerHTML = "";
+        }
+        else if(Season_bar_num==4){
+          document.getElementById("Spring_nav_a").innerHTML = "Spring";
+          document.getElementById("Summer_nav_a").innerHTML = "Summer";
+          document.getElementById("Fall_nav_a").innerHTML = "Autumn";
+          document.getElementById("Spring").style.background = "rgb(28,225,126)";
+          document.getElementById("Spring_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Summer").style.background = "rgb(28,225,126)";
+          document.getElementById("Summer_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Fall").style.background = "rgb(28,225,126)";
+          document.getElementById("Fall_nav_a").style.color = "rgb(196,57,82)";
+          document.getElementById("Winter").style.background = 'url(images/겨울_2.jpg)';
+          document.getElementById("Winter_nav_a").style.color = "rgba(0,0,0,0)";
+          document.getElementById("Winter_nav_a").innerHTML = "";
+        }
+      }
+
+      function Spring_Month_div(obj){
+        document.getElementById("Month_nav_a").innerHTML = "Mar~May";
+        document.getElementById("Month_nav_a").style.color = "white";
+        document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+        document.getElementById("Month_nav").style.display = "block";
+      }
+      function Summer_Month_div(obj){
+        document.getElementById("Month_nav_a").innerHTML = "Jun~Aug";
+        document.getElementById("Month_nav_a").style.color = "white";
+        document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+        document.getElementById("Month_nav").style.display = "block";
+      }
+      function Fall_Month_div(obj){
+        document.getElementById("Month_nav_a").innerHTML = "Sep~Nov";
+        document.getElementById("Month_nav_a").style.color = "white";
+        document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+        document.getElementById("Month_nav").style.display = "block";
+      }
+      function Winter_Month_div(obj){
+        document.getElementById("Month_nav_a").innerHTML = "Dec~Feb";
+        document.getElementById("Month_nav_a").style.color = "white";
+        document.getElementById("Month_nav").style.background = "rgb(43,189,210)";
+        document.getElementById("Month_nav").style.display = "block";
+      }
+      function Month_hide(obj){
+        document.getElementById("Month_nav").style.display = "none";//
+      }
+  function Inforhide()
+  {
+    document.getElementById("Eventinfor").style.display = "none";
+    document.getElementById("API").style.display = "none";
+  }
+  function Infornum(num)
+  {
+    if(num == 1)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/tae-an.jpg";
+      document.getElementById('Title').textContent = "Taean Tulip Festival";
+      document.getElementById('Term').textContent = "2018.04.19 ~ 2018.05.13";
+      document.getElementById('Address').textContent = "400 Anmyeon-eup, Jeonju, Taean-gun, Chungcheongnam-do";
+      document.getElementById('Place').textContent = "KKotji Beach";
+      document.getElementById('Phonenumber').textContent = "041-675-9200";
+      document.getElementById('Homepage').textContent = "http://www.koreaflowerpark.com";
+      document.getElementById('Intro').innerHTML = "In 2002 and 2009, once again the glory of Anmyeon International Flower Show!<br/>The 2018 Taean World Tulip Festival will be re-elected by the World Tulip Summit (WTS) in 2017 and the world's top five tulip festivals in 2017. This time, I want to recreate the old glory at the Flower Garden Coast Park where the Anmyeondo International Flower Expo was held in 2002 and 2009, not the Nature World. You can see the wide open sea, sandy beaches and millions of tulips. ";
+
+      var taean = {lat: 36.498433, lng: 126.337186};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: taean
+        });
+        var marker = new google.maps.Marker({
+          position: taean,
+          map: map
+          });
+    }
+    else if(num == 2)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/nong.jpg";
+      document.getElementById('Title').textContent = "Sanger Jincheon Cuddle Festival";
+      document.getElementById('Term').textContent = "2018.05.25 ~ 2018.05.27";
+      document.getElementById('Address').textContent = "Nongdalilo 1032-11, Munbaegmyeon, Jincheongun, Chungcheongbuk-do";
+      document.getElementById('Place').textContent = "A member of the cheek";
+      document.getElementById('Phonenumber').textContent = "043-539-3601~2";
+      document.getElementById('Homepage').textContent = "http://www.jincheon.go.kr";
+      document.getElementById('Intro').innerHTML = "Cheddar Festival is an unusual festival that aims to promote precious cultural heritage and to preserve the importance of preserving precious cultural heritage as well as to learn the wisdom of ancestors. It is a valuable cultural heritage of 'Sanger Jincheon' which is designated as the 28th tall tangible cultural asset and is the only stone in Korea with 1,000 years of mysteriousness. It has a total length of 94m and width of 3.6m and a thickness of 1.2m. The bridge between the bridge and the pier is 0.8m. Even though the natural stone is piled up as it is, it is designed to flow water on the bridge even if the rainy season is over, and the construction technique that does not lose for 1000 years is an excellent legacy.<br/>- Day 1 : Cheddar specials, Jincheon children's choir performance, Opening ceremony, Climbling ceremony, Celebration performance, Fireworks<br/>- Day 2 : Byeongmyeong and Kyongsik tournament, Bongsuri fishing tournament, Momumbuk and Binari, Crossing the bonus bridge <br/>- Day 3 : Special Lecture on Entrance Examination Strategies, Sedum Suwon Competition, Blowing Balloons, Walking Competition";
+
+      var jincheon = {lat: 36.829395, lng: 127.490714};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: jincheon
+        });
+        var marker = new google.maps.Marker({
+          position: jincheon,
+          map: map
+        });
+    }
+    else if(num == 3)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/ok.jpg";
+      document.getElementById('Title').textContent = "Fragrance Okcheon Grapes Peach Festival";
+      document.getElementById('Term').textContent = "2018.07.20 ~ 2018.07.22";
+      document.getElementById('Address').textContent = "Gwansungro 53, Okcheon-eup, Okcheon-gun, Chungcheongbuk-do";
+      document.getElementById('Place').textContent = "Member of Okcheon public playground";
+      document.getElementById('Phonenumber').textContent = "043-730-3284";
+      document.getElementById('Homepage').textContent = "http://www.oc.go.kr/html/grape";
+      document.getElementById('Intro').innerHTML = "Okcheon, Chungbuk is a South Korean facility grape juju complex. It is rich in sunshine, massive production of grapes with a strong day and night, and won the Grand Prize in the national brand grape in 2016. Okcheon peach grown in the semi-oily land of Daecheong-ho has a taste and flavor, which is gaining popularity among consumers. I will come closer to consumers with the theme of Okcheon's famous grapes and peaches that will remind me of my hometown. ";
+
+      var okcheon = {lat: 36.302579, lng: 127.574110};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: okcheon
+        });
+        var marker = new google.maps.Marker({
+          position: okcheon,
+          map: map
+        });
+    }
+    else if(num == 4)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/go.jpg";
+      document.getElementById('Title').textContent = "Goesan Chilli Festival";
+      document.getElementById('Term').textContent = "2018.08.30 ~ 2018.09.02";
+      document.getElementById('Address').textContent = "Imggukjeongro 90, Goesan-eup, Goesan-gun, Chungcheongbuk-do";
+      document.getElementById('Place').textContent = "Culture and Sports Center, Mini Football Stadium, Sports Complex, Dong Jincheon";
+      document.getElementById('Phonenumber').textContent = "043-830-3461~3";
+      document.getElementById('Homepage').textContent = "http://www.goesan.go.kr/festival";
+      document.getElementById('Intro').innerHTML = "Pepper is the main crop which is introduced in Korea and has a history of 400 years and is the center of agriculture economy and national diet. It is a major crop that greatly affects society, spirit and culture. Its domestic market size is 1.2 trillion won, Rice is the second most important agricultural product. Goesan County is a region where the pepper has been cultivated since the Joseon Dynasty. It is a region-specific crop that occupies the largest portion of the farm household economy. Goesan Clean Pepper is the nation's first luxury brand with the designation of special enterprise of pepper industry, registration of geographical indication, ISO quality certification, selection of cluster business, HACCP certification, registration of Goesan hot pepper geographical indication, registration of Goesan hot pepper powder geographical indication, It is popular with consumers. With this background, <Goesan Pepper Festival>, which has been held since 2001, is held every four days from the end of August to the beginning of September, with hundreds of thousands of tourists visiting and enjoying the festival every year. ";
+
+      var goesan = {lat: 36.815486, lng: 127.786848};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: goesan
+        });
+        var marker = new google.maps.Marker({
+          position: goesan,
+          map: map
+        });
+    }
+    else if(num == 5)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/sung.jpg";
+      document.getElementById('Title').textContent = "Eumseong Ginseng Festival";
+      document.getElementById('Term').textContent = "2018.10.10 ~ 2018.10.14";
+      document.getElementById('Address').textContent = "Eungcheonseogil 25, Geumwangeub, Eumseong-gun, Chungcheongbuk-do";
+      document.getElementById('Place').textContent = "Geumwang-eup Eungcheon Promotion Hall";
+      document.getElementById('Phonenumber').textContent = "043-871-3692";
+      document.getElementById('Homepage').textContent = "http://www.eumseong.go.kr/tour";
+      document.getElementById('Intro').innerHTML = "This is the 6th promotion event this year to promote the local economy through the excellence of Ginseng Ginseng, the largest Ginseng locus in the central region and the promotion of local agricultural products. It is possible to buy the best quality voice ginseng in Korea nationwide at a reasonable price. Various performances, experiences, It will operate. ";
+
+      var insam = {lat: 36.990790, lng: 127.595134};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: insam
+        });
+        var marker = new google.maps.Marker({
+          position: insam,
+          map: map
+        });
+    }
+    else if(num == 6)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/young.jpg";
+      document.getElementById('Title').textContent = "Yeongdong Nangye Traditional Music Festival";
+      document.getElementById('Term').textContent = "2018.10.11 ~ 2018.10.14";
+      document.getElementById('Address').textContent = "Chungcheongbuk-do Yeongdong-gun Yongdong-eup Byeong-ri";
+      document.getElementById('Place').textContent = "Yeongdong, Chungbuk - Yongdong Haesang Parking Lot, Nogyese Temple, etc.";
+      document.getElementById('Phonenumber').textContent = "043-745-8917";
+      document.getElementById('Homepage').textContent = "http://ydft.kr";
+      document.getElementById('Intro').innerHTML = "The 'Yeongdong Nangui National Music Festival', which is held in Yeongdong every year to honor the musical achievements of the most malevolent Nanyang Park Yeon of Korea, is held every year in Youngdong to promote traditional culture and arts. It is the only national music festival in Korea. In particular, this year's 51st festival will feature a wine festival, demonstrations of fisheries, jongmyo rituals, traditional Korean traditional music performances, various local foods, traditional Korean music instruments and performance experiences. Of the world. ";
+
+      var gookak = {lat: 36.173459, lng: 127.753118};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: gookak
+        });
+        var marker = new google.maps.Marker({
+          position: gookak,
+          map: map
+        });
+    }
+    else if(num == 7)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/sang.jpg";
+      document.getElementById('Title').textContent = "Nangye Traditional Musicteam Standing performances";
+      document.getElementById('Term').textContent = "2018.01.06 ~ 2018.12.29";
+      document.getElementById('Address').textContent = "Chungcheongbuk-do Yongdong-gun Simcheonmyeon Gukaklo 1gil 33";
+      document.getElementById('Place').textContent = "Yeongdong Traditional Music Experience Village";
+      document.getElementById('Phonenumber').textContent = "043-740-3224";
+      document.getElementById('Homepage').textContent = "http://gugak.yd21.go.kr";
+      document.getElementById('Intro').innerHTML = "In order to honor the spirit and spirit of the nation's three most malignant nervous systems, along with the King of Goguryeo Mountains and Kaya's Ureuk, his hometown, Yeongdong, Chungbuk, is undergoing a permanent performance by the Ministry of Culture, Sports and Tourism. In 1991, we established the National Nanyang Music Orchestra, Korea's first national orchestra group, to perform the national meaning. In 1994, the Korean National Orchestra performed the opening ceremony of the national music orchestra. Following the opening of the National Museum of Korean Traditional Music in 2000, the National Museum of Korean Traditional Music in 2006, and the Young-dong Traditional Music Experience Hall in 2015, Yeongdong is reborn as a mecca for Korean traditional music. Every Saturday, the <Nanggye Gongja Orchestra Standing Performance> held at Yeongdong Traditional Music Experience Village raises the status of Korean traditional music, which is our own tradition, and recalls its value and importance.";
+
+      var nangae = {lat: 36.212120, lng: 127.699601};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: nangae
+        });
+        var marker = new google.maps.Marker({
+          position: nangae,
+          map: map
+        });
+    }
+    else if(num == 8)
+    {
+      document.getElementById('Image').src = "./images/Choongchungdo images/chil.jpg";
+      document.getElementById('Title').textContent = "Chilgapsan Ice Fountain Festival";
+      document.getElementById('Term').textContent = "2017.12.23 ~ 2018.02.18";
+      document.getElementById('Address').textContent = "175-11, Chunjangho road, Jungsan-myeon, Cheongyang-gun, Chungcheongnam-do";
+      document.getElementById('Place').textContent = "Members of Cheongyang Alps Village Festival Hall";
+      document.getElementById('Phonenumber').textContent = "041-942-0797~8";
+      document.getElementById('Homepage').textContent = "http://www.alpsvill.com";
+      document.getElementById('Intro').innerHTML = "“Fairy-tale country friends gather~!“<br/>Alps castle created by large ice fountain<br/>The winter kingdom of Chilgak mountain where the characters of fairy tale country are gathered together.<br/>If the black darkness falls on Chilgak Mountain, the glittering galaxy will open in the night, changing into colorful clothes under the starlight.<br/>It is a great place to have a memorable memory for your children.<br/>The 5-minute drive is the longest in the nation.<br/>In winter, Chilgok Mountain Winter Kingdom! I hope you will come to the Chilgok Mountain Ice Fountain Festival.";
+
+      var chilgap = {lat: 36.409488, lng: 126.916030};
+        var map = new google.maps.Map(document.getElementById('Map'), {
+          zoom: 12,
+          center: chilgap
+        });
+        var marker = new google.maps.Marker({
+          position: chilgap,
+          map: map
+        });
+    }
+
+    document.getElementById('Eventinfor').style.display = "block";
+  }
+
+  function Season_Selector(num)
+  {
+    if(num == 1)
+    {
+      Season_bar_num = 1;
+      stop_Summer_interval();
+      stop_Fall_interval();
+      stop_Winter_interval();
+      start_Spring_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 2)
+    {
+      Season_bar_num = 2;
+      stop_Spring_interval();
+      stop_Fall_interval();
+      stop_Winter_interval();
+      start_Summer_interval();
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Summer").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 3)
+    {
+      Season_bar_num = 3;
+      stop_Spring_interval();
+      stop_Summer_interval();
+      stop_Winter_interval();
+      start_Fall_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Winter_interval);
+      clearInterval(Winter_interval2);
+    }
+    if(num == 4)
+    {
+      Season_bar_num = 4;
+      stop_Spring_interval();
+      stop_Summer_interval();
+      stop_Fall_interval();
+      start_Winter_interval();
+      document.getElementById("Event_Summer").style.display = "none";
+      document.getElementById("Event_Fall").style.display = "none";
+      document.getElementById("Event_Spring").style.display = "none";
+      document.getElementById("Event_Winter").style.display = "block";
+      document.getElementById('Eventinfor').style.display = "none";
+      clearInterval(Spring_interval);
+      clearInterval(Spring_interval2);
+      clearInterval(Summer_interval);
+      clearInterval(Summer_interval2);
+      clearInterval(Fall_interval);
+      clearInterval(Fall_interval2);
+    }
+    Season_bar_fix(Season_bar_num);
+  }
+  function Next(num)
+{
+  if(num == 1)
+  {
+    document.getElementById('API').style.display = "block";
+    document.getElementById('Eventinfor').style.display = "none";
+  }
+  if(num == 2)
+  {
+    document.getElementById('Eventinfor').style.display = "block";
+    document.getElementById('API').style.display = "none";
+  }
+}
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgxRAiLM6U879XESA7-6C8GvnaouETN3Y&callback=initMap"></script>
+</body>
+</html>
